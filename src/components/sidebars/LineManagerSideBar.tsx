@@ -3,17 +3,22 @@ const LineManagerSideBar = () => {
   return (
     <ul>
       <li>
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/connect/linemanager/employees">Employees</NavLink>
       </li>
       <li>
-        <NavLink to="/employees">Employees</NavLink>
+        <NavLink to="/connect/linemanager/message-employees">
+          Message Employees
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/message-employees">Message Employees</NavLink>
+        <NavLink to="/connect/linemanager/change-passward">
+          change Password
+        </NavLink>
       </li>
-
       <li>
-        <NavLink to="/message-employee">Message Employee</NavLink>
+        <NavLink to="/connect/linemanager/message-employee">
+          Message Employee
+        </NavLink>
       </li>
     </ul>
   );

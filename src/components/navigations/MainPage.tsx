@@ -17,6 +17,9 @@ const MainPage = () => {
       <li>
         <NavLink to="/policy">policy</NavLink>
       </li>
+      <li>
+        <NavLink to="/connect">connect</NavLink>
+      </li>
     </ul>
   );
 };

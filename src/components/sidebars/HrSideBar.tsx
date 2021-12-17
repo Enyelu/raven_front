@@ -3,17 +3,16 @@ const HrSideBar = () => {
   return (
     <ul>
       <li>
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/connect/hr/employees">Employees</NavLink>
       </li>
       <li>
-        <NavLink to="/employees">Employees</NavLink>
+        <NavLink to="/connect/hr/message-employees">Message Employees</NavLink>
       </li>
       <li>
-        <NavLink to="/message-employees">Message Employees</NavLink>
+        <NavLink to="/connect/hr/change-password">change Password</NavLink>
       </li>
-
       <li>
-        <NavLink to="/message-employee">Message Employee</NavLink>
+        <NavLink to="/connect/hr/message-employee">Message Employee</NavLink>
       </li>
     </ul>
   );
