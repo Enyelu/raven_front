@@ -1,9 +1,9 @@
 import { Switch, Route } from "react-router-dom";
-import ChangePassword from "./ChangePassword";
-import Employees from "./Employees";
-import MessageEmployee from "./MessageEmployee";
-import HrSideBar from "./sidebars/HrSideBar";
-import MessageEmployees from "./MessageEmployees";
+import ChangePassword from "../changePassword/ChangePassword";
+import Employees from "../employees/Employees";
+import MessageEmployee from "../messageEmployee/MessageEmployee";
+import HrSideBar from "../sidebars/HrSideBar";
+import MessageEmployees from "../messageEmployees/MessageEmployees";
 
 const Hr = () => {
   return (

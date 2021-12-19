@@ -1,18 +1,17 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import MainPage from "./components/navigations/MainPage";
-import Home from "./components/Home";
-import About from "./components/About";
-import Connect from "./components/Connect";
-import Login from "./components/Login";
-import Logout from "./components/Logout";
-import NotFound from "./components/NotFound";
-import Policy from "./components/Policy";
-import "./App.css";
+import Home from "./components/home/Home";
+import About from "./components/about/About";
+import Connect from "./components/connect/Connect";
+import Login from "./components/login/Login";
+import Logout from "./components/logout/Logout";
+import NotFound from "./components/notFound/NotFound";
+import Policy from "./components/policy/Policy";
+import "./App.scss";
 
 function App() {
   return (
-    <div>
-      <h1>Raven Access</h1>
+    <div className="App">
       <MainPage />
       <Switch>
         <Route path="/about" component={About} />

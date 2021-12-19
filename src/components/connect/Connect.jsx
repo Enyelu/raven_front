@@ -1,9 +1,9 @@
 import { Switch, Route, Redirect } from "react-router-dom";
-import ConnectBar from "./navigations/ConnectBar";
-import Employee from "./Employee";
-import LineManager from "./LineManager";
+import ConnectBar from "../navigations/ConnectBar";
+import Employee from "../employee/Employee";
+import LineManager from "../lineManager/LineManager";
 
-import Hr from "./Hr";
+import Hr from "../hr/Hr";
 
 const Connect = () => {
   return (

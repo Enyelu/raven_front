@@ -1,9 +1,9 @@
 import { Switch, Route } from "react-router-dom";
-import ChangePassword from "./ChangePassword";
-import Employees from "./Employees";
-import MessageEmployees from "./MessageEmployees";
-import Employee from "./Employee";
-import LineManagerSideBar from "./sidebars/LineManagerSideBar";
+import ChangePassword from "../changePassword/ChangePassword";
+import Employees from "../employees/Employees";
+import MessageEmployees from "../messageEmployees/MessageEmployees";
+import MessageEmployee from "../messageEmployee/MessageEmployee";
+import LineManagerSideBar from "../sidebars/LineManagerSideBar";
 
 const LineManager = () => {
   return (
@@ -22,7 +22,7 @@ const LineManager = () => {
         />
         <Route
           path="/connect/linemanager/message-employee"
-          component={Employee}
+          component={MessageEmployee}
         />
       </Switch>
     </div>

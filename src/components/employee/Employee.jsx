@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import ContactHr from "./ContactHr";
-import ChangePassword from "./ChangePassword";
-import EmployeeSideBar from "./sidebars/EmployeeSideBar";
-import ContactLineManager from "./ContactLineManager";
+import ContactHr from "../contacthr/ContactHr";
+import ChangePassword from "../changePassword/ChangePassword";
+import EmployeeSideBar from "../sidebars/EmployeeSideBar";
+import ContactLineManager from "../contactLineManage/ContactLineManager";
 
 const Employee = () => {
   return (
