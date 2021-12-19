@@ -1,10 +1,11 @@
+import "./Home.scss";
 const Home = () => {
   return (
-    <div>
-      <div>body 1</div>
-      <div>body 2</div>
-      <div>body 3</div>
-      <div>footer</div>
+    <div className="homeContainer">
+      <div className="home home--1"></div>
+      <div className="home home--2"></div>
+      <div className="home home--3"></div>
+      <div className="home home--4"></div>
     </div>
   );
 };

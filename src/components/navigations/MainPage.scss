@@ -1,7 +1,8 @@
 .topbar {
   background: #bcf;
+  height: 30%;
   margin: 0;
-  padding: 3px;
+  padding: 0.5px;
 }
 .nav {
   height: 10%;
@@ -17,12 +18,22 @@
   color: #fff;
   list-style-type: none;
   cursor: pointer;
-  width: 4%;
+  width: min-content;
   height: 4%;
   border: 1px solid #ebc;
   border-radius: 4px;
   text-align: center;
-  font-size: 10px;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  &:hover {
+    font-weight: bold;
+    color: #fff;
+    background-color: #adb;
+    border-radius: 8px;
+  }
 }
 .logo {
   font-weight: bold;

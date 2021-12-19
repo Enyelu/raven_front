@@ -10,27 +10,47 @@ const MainPage = () => {
           </NavLink>
         </li>
         <li className="item">
-          <NavLink to="/about" className="rem">
+          <NavLink
+            to="/about"
+            className="rem"
+            activeStyle={{ backgroundColor: "#ead", color: "#eea" }}
+          >
             about
           </NavLink>
         </li>
         <li className="item">
-          <NavLink to="/login" className="rem">
+          <NavLink
+            to="/login"
+            className="rem"
+            activeStyle={{ backgroundColor: "#ead", color: "#eea" }}
+          >
             login
           </NavLink>
         </li>
         <li className="item">
-          <NavLink to="/logout" className="rem">
+          <NavLink
+            to="/logout"
+            className="rem"
+            activeStyle={{ backgroundColor: "#ead", color: "#eea" }}
+          >
             logout
           </NavLink>
         </li>
         <li className="item">
-          <NavLink to="/policy" className="rem">
+          <NavLink
+            to="/policy"
+            className="rem"
+            activeStyle={{ backgroundColor: "#ead", color: "#eea" }}
+          >
             policy
           </NavLink>
         </li>
         <li className="item">
-          <NavLink to="/connect" className="rem">
+          <NavLink
+            to="/connect"
+            className="rem"
+            activeStyle={{ backgroundColor: "#ead", color: "#eea" }}
+          >
             connect
           </NavLink>
         </li>
