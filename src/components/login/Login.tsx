@@ -29,7 +29,7 @@ const Login = () => {
           required
         />
         <div className="buttons">
-          <button>Sign In</button>
+          <button>Login</button>
           {/* <CustomButton> Sign in </CustomButton> */}
         </div>
       </form>

@@ -1,0 +1,16 @@
+.changePassword,
+.messageEmployee,
+.messageEmployees,
+employees {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=Hr.css.map */
