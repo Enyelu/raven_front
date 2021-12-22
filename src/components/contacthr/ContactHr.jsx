@@ -1,6 +1,6 @@
 const ContactHr = () => {
   return (
-    <div>
+    <div className="contactHr">
       <h3>Contact Hiring Manager</h3>
     </div>
   );
