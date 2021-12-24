@@ -1,0 +1,31 @@
+.navHeader {
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  height: 65px;
+  margin: 0px;
+}
+.navHeader .ulHeader {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0px;
+  background: salmon;
+}
+nav .ulHeader .liHeader {
+  padding: 20px;
+}
+.link {
+  text-decoration: none;
+}
+.ac {
+  background-color: #060b26;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+}

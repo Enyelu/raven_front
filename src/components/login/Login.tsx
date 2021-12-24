@@ -7,7 +7,7 @@ const Login = () => {
   const handleChange = () => {};
   const handleSubmit = () => {};
   return (
-    <div className="sign-in">
+    <div className="sign">
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
 
