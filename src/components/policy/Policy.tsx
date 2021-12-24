@@ -2,11 +2,9 @@ import "./Policy.scss";
 const Policy = () => {
   return (
     <div className="policy">
-      <h1>Policy</h1>
-      <hr />
+      <h3>Policy</h3>
       <div>
-        <h3>React Basics</h3>
-        <p className="para">
+        <p>
           In this tutorial, we’ll show how to build an interactive tic-tac-toe
           game with React. You can see what we’ll be building here: Final
           Result. If the code doesn’t make sense to you, or if you are
@@ -22,9 +20,8 @@ const Policy = () => {
           can start building the game.
         </p>
       </div>
-      <div className="policy">
-        <h3>Prerequisites</h3>
-        <p className="para">
+      <div>
+        <p>
           We’ll assume that you have some familiarity with HTML and JavaScript,
           but you should be able to follow along even if you’re coming from a
           different programming language. We’ll also assume that you’re familiar
@@ -36,9 +33,8 @@ const Policy = () => {
           REPL to check what ES6 code compiles to.
         </p>
       </div>
-      <div className="policy">
-        <h3>Here we go</h3>
-        <p className="para">
+      <div>
+        <p>
           We’ll get to the funny XML-like tags soon. We use components to tell
           React what we want to see on the screen. When our data changes, React
           will efficiently update and re-render our components. Here,
