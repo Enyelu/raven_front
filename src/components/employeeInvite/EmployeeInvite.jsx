@@ -12,6 +12,7 @@ export default function EmployeeInvite() {
             <div className='invite-image-div'>
                 <img src={InviteImage} className='invite-image' alt='registration image'/>
             </div>
+            
             <form className ="invite-form">
                 <h3 className='invite-block-title'>Invite New Employee</h3>
                 <div className='invite-input-div'>

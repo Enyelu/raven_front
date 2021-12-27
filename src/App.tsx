@@ -10,6 +10,7 @@ import Policy from "./components/policy/Policy";
 import "./App.scss";
 import Registration from "./components/registration/Registration";
 import EmployeeInvite from "./components/employeeInvite/EmployeeInvite"
+import SlackOnboard from "./components/slackOnboard/SlackOnboard"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/registration" component={Registration} />
         <Route path="/invite" component={EmployeeInvite} />
+        <Route path="/slackOnboard" component={SlackOnboard} />
         <Route component={NotFound} />
         <Redirect to="/about" />
         <Redirect to="/logout" />
@@ -32,6 +34,7 @@ function App() {
         <Redirect to="/registration" />
         <Redirect to="/connect" />
         <Redirect to="/invite" />
+        <Redirect to="/slackOnboard" />
       </Switch>
     </div>
   );
