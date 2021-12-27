@@ -1,5 +1,5 @@
 import { Switch, Route, Redirect } from "react-router-dom";
-import MainPage from "./components/navigations/MainPage";
+import Header from "./components/navigations/Header";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Connect from "./components/connect/Connect";
@@ -14,7 +14,7 @@ import EmployeeInvite from "./components/employeeInvite/EmployeeInvite"
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <Header />
       <Switch>
         <Route path="/about" component={About} />
         <Route path="/connect" component={Connect} />

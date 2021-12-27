@@ -1,9 +1,7 @@
 import "./About.scss";
 const About = () => {
   return (
-    <div>
-      <h1>About Us</h1>
-      <hr />
+    <div className="about">
       <div>
         <h3>React Basics</h3>
         <p>
@@ -23,7 +21,6 @@ const About = () => {
         </p>
       </div>
       <div>
-        <h3>Prerequisites</h3>
         <p>
           We’ll assume that you have some familiarity with HTML and JavaScript,
           but you should be able to follow along even if you’re coming from a
@@ -37,7 +34,6 @@ const About = () => {
         </p>
       </div>
       <div>
-        <h3>Here we go</h3>
         <p>
           We’ll get to the funny XML-like tags soon. We use components to tell
           React what we want to see on the screen. When our data changes, React
