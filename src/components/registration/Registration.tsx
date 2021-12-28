@@ -1,16 +1,39 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import "./Registration.scss";
 import RegistrationImage from "../images/registrationImage.png"
 
-function Registration() {
+function Registration() { 
+    
     
     const [employeeDetails, setEmployeeDetails] = useState({FirstName:'',MiddleName:'', LastName:'', Password:'', ConfirmPassword:'',
                                                             Age:'', Gender:'', DOB:'', Photo:'', Documents:'', StreetNumber:'', StreetName:'',
                                                             City:'', State:'', Country:'', Email:'', Department:'', Designation:'', Salary:'', StartDate:''});
 
+
+    useEffect(() => {
+        
+        let parameters = new URLSearchParams(window.location.search);
+        const emailParam = JSON.stringify(parameters.get('email'))
+        const departmentParam = JSON.stringify(parameters.get('department'));
+        const designationParam = JSON.stringify(parameters.get('designation'));
+        const salaryParam = JSON.stringify(parameters.get('salary'));
+        const startDateParam = JSON.stringify(parameters.get('startDate'));
+
+        if(parameters !== null)
+        {
+            setEmployeeDetails({...employeeDetails, Email: emailParam});
+            setEmployeeDetails({...employeeDetails, Department: departmentParam});
+            setEmployeeDetails({...employeeDetails, Designation: designationParam});
+            setEmployeeDetails({...employeeDetails, Salary: salaryParam});
+            setEmployeeDetails({...employeeDetails, StartDate: startDateParam});
+        }
+    }, [])
+
     function handleSubmit(){
             //PreventDefault();
+            //call api
     } 
+
     return (
         <div className='main-registration-div'>
 
@@ -37,7 +60,7 @@ function Registration() {
                                 <input className='registration-input' type='text' placeholder='Last Name' required onChange={e => setEmployeeDetails({...employeeDetails, LastName: e.target.value})} value={employeeDetails.LastName} />
                             </div>
                             <div className='registration-input-div'>
-                                <input className='registration-input' type='email' placeholder='Email' required value='' disabled/>
+                                <input className='registration-input' type='email' placeholder='Email' required value={employeeDetails.Email}/>
                             </div>
                             <div className='registration-input-div'>
                                 <input className='registration-input' type='password' placeholder='Password' required onChange={e => setEmployeeDetails({...employeeDetails, Password: e.target.value})} value={employeeDetails.Password}/>
@@ -48,9 +71,16 @@ function Registration() {
                             <div className='registration-input-div'>
                                 <input className='registration-input' type='number' placeholder='Age' required  min="18" max="55" onChange={e => setEmployeeDetails({...employeeDetails, Age: e.target.value})} value={employeeDetails.Age}/>
                             </div>
-                            <div className='registration-input-div'>
-                                <input className='registration-input' type='text' placeholder='Gender'  required />
+
+                            <div className='gender-div'>
+                                <label className='gender-label'>Gender</label>
+                                <select className='gender-select' onChange={e => setEmployeeDetails({...employeeDetails, Gender: e.target.value})} value={employeeDetails.Gender}>
+                                    <option key='Male' value='Male'>Male</option>
+                                    <option key='Female' value='Female'>Female</option>
+                                </select>
                             </div>
+
+                            
                             <div className='registration-input-div'>
                                 <input className='registration-input' type='date' placeholder='Birth Date'  required onChange={e => setEmployeeDetails({...employeeDetails, DOB: e.target.value})} value={employeeDetails.DOB}/>
                             </div>
@@ -88,16 +118,16 @@ function Registration() {
                     <div className='job-description'>
                         <h3 className='registration-blocks-title'>Job Info</h3>
                         <div className='registration-input-div'>
-                            <input className='registration-input' type='text' placeholder='Department'  required disabled onChange={e => setEmployeeDetails({...employeeDetails, Department: e.target.value})} value={employeeDetails.Department} />
+                            <input className='registration-input' type='text' placeholder='Department'  value={employeeDetails.Department} />
                         </div>
                         <div className='registration-input-div'>
-                            <input className='registration-input' type='text' placeholder='Designation' required disabled onChange={e => setEmployeeDetails({...employeeDetails, Designation: e.target.value})} value={employeeDetails.Designation} />
+                            <input className='registration-input' type='text' placeholder='Designation' required disabled value={employeeDetails.Designation} />
                         </div>
                         <div className='registration-input-div'>
-                            <input  className='registration-input' type='number' placeholder='Salary'  required disabled onChange={e => setEmployeeDetails({...employeeDetails, Salary: e.target.value})} value={employeeDetails.Salary} />
+                            <input  className='registration-input' type='number' placeholder='Salary'  required disabled value={employeeDetails.Salary} />
                         </div>
                         <div className='registration-input-div'>
-                            <input className='registration-input' type='text' placeholder='Start Date' required disabled onChange={e => setEmployeeDetails({...employeeDetails, StartDate: e.target.value})} value={employeeDetails.StartDate} />
+                            <input className='registration-input' type='text' placeholder='Start Date' required disabled value={employeeDetails.StartDate} />
                         </div>
                     </div>
                     <button className='register-button' type='submit'>Register</button>
@@ -105,7 +135,6 @@ function Registration() {
                     <div>
                         <h4 className='contact-us'>Could'nt register ? <a className='click-here' href='#'>Click here</a> to contact us</h4>
                     </div>
-                
                 </form>
             </div>
     )

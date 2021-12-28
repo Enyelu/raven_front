@@ -100,11 +100,6 @@
     border-radius:5px;
 }
 
-register-button:hover{
-    background-color: blue;
-    cursor: pointer;
-}
-
 .registration-blocks-title{
     font-style: normal;
     font-family: Georgia;
@@ -132,4 +127,16 @@ register-button:hover{
     margin-top:100px;
     margin-bottom:20px;
     width: 150px;
+}
+
+.gender-select{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+}
+
+.gender-div{
+    margin-top: 10px;
 }
