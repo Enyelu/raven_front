@@ -82,6 +82,7 @@ function Registration() {
 
                             
                             <div className='registration-input-div'>
+                                <label>Date of Birth</label>
                                 <input className='registration-input' type='date' placeholder='Birth Date'  required onChange={e => setEmployeeDetails({...employeeDetails, DOB: e.target.value})} value={employeeDetails.DOB}/>
                             </div>
                             <div className='registration-input-div'>
