@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.contact-us-main-div{
+    background-color:white;
+    justify-content: center;
+    text-align:center;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-us-form{
+    background-color:whitesmoke;
+    width: 40%;
+    padding: 10px 0;
+    align-self:center;
+    margin: 30px;
+    margin-top: 5px;
+}
+
+.contact-us-image{
+    margin-top:150px;
+    width: 20%;
+    align-self: center;
+}
+
+.contact-us-image-div{
+    margin: 0;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+}
+.contact-us-block-title{
+    font-style: normal;
+    font-family: Georgia;
+    margin: 10px 0;
+}
+
+.contact-us-input{
+    border-radius: 5px;
+    display: inline-block;
+    font-style: normal;
+    font-family: Georgia;
+    width: 50%;
+    height: 30px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.contact-us-textarea{
+    border-radius: 5px;
+    display: inline-block;
+    font-style: normal;
+    font-family: Georgia;
+    width: 80%;
+    height: 80px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.contact-us-button{
+    background-color: green;
+    color:white;
+    border-radius: 5px;
+    font-style: normal;
+    font-family: Georgia;
+    width: 50%;
+    height: 30px;
+}
+
+.contact-us-phone{
+    font-style: italic;
+    font-family: Georgia;
+    margin: 20px 0;
+}

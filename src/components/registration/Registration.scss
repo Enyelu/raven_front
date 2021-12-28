@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.main-registration-div{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    background-color: white;
+    margin: 40px 0;
+    align-items: center;
+}
+
+.form-groups{
+    width: 100%;
+    justify-content:center;
+    background-color: white;
+    align-items: center;
+}
+
+.registration-form{
+    justify-content:center;
+    background-color: white;
+    display:column;
+    align-self: center;
+    align-items: center;
+    width: 30%;
+    height: 60%;
+}
+
+.form-title-div{
+
+    text-align:center;
+    font-style: normal;
+    font-family: Georgia;
+    margin-top:100px;
+    margin-bottom:20px;
+    width: 100%px;
+    font-size: 30px;
+}
+
+.registration-image{
+    width: 80%;
+    height: 60%;
+    align-self: center;
+    margin-top: 100px;
+}
+
+.registration-image-div{
+    margin: 0;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.personal-info{
+    align-self: center;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    justify-content:center;
+}
+.address-info{
+    align-self: center;
+    width: 50%;
+    height: 50%;
+    background-color: White;
+}
+
+.job-description{
+    align-self: center;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+}
+.registration-input-div{
+    justify-content: center;
+    align-self: center;
+}
+
+.registration-input{
+    width: 200%;
+    align-self: center;
+    height:30px;
+    border-radius:5px;
+    margin:5px 0;
+    display: inline-block;
+    font-family: verdana;
+}
+
+.register-button{
+    width: 100%;
+    height:40px;
+    margin:20px 20px 0 0;
+    background-color: green;
+    color: white;
+    border-radius:5px;
+}
+
+.registration-blocks-title{
+    font-style: normal;
+    font-family: Georgia;
+    font-size:20px;
+    width: 200px;
+    margin:10px 0;
+}
+
+.contact-us{
+    font-style:italic;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.click-here{
+    text-decoration:none;
+    font-family: Georgia;
+}
+
+.form-title{
+    text-align:center;
+    font-style: normal;
+    font-family: Georgia;
+    margin-top:100px;
+    margin-bottom:20px;
+    width: 150px;
+}
+
+.gender-select{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+}
+
+.gender-div{
+    margin-top: 10px;
+}

@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.slack-main-div{
+    background-color:white;
+    justify-content: center;
+    text-align:center;
+    display: flex;
+    flex-direction: row;
+}
+
+.slack-form{
+    background-color:whitesmoke;
+    width: 40%;
+    padding: 10px 0;
+    align-self:center;
+    margin: 30px;
+}
+
+.slack-image{
+    margin-top:150px;
+    width: 50%;
+    align-self: center;
+}
+
+.slack-image-div{
+    margin: 0;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+}
+.slack-block-title{
+    font-style: normal;
+    font-family: Georgia;
+    margin: 10px 0;
+}
+
+.slack-input{
+    border-radius: 5px;
+    display: inline-block;
+    font-style: normal;
+    font-family: Georgia;
+    width: 50%;
+    height: 30px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.slack-button{
+    background-color: green;
+    color:white;
+    border-radius: 5px;
+    font-style: normal;
+    font-family: Georgia;
+    width: 50%;
+    height: 30px;
+}
+
+.slack-date{
+    display: flex;
+    flex-direction:column;
+}
+
+.slack-label{
+    font-style: normal;
+    font-family: Georgia;
+}
