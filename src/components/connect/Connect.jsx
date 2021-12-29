@@ -2,12 +2,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import ConnectBar from "../navigations/ConnectBar";
 import Employee from "../employee/Employee";
 import LineManager from "../lineManager/LineManager";
-
 import Hr from "../hr/Hr";
+import "./Connect.scss";
 
 const Connect = () => {
   return (
-    <div>
+    <div className="connect">
       <h3>I am connect component</h3>
       <ConnectBar />
       <Switch>

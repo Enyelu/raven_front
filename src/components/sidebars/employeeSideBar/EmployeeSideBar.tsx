@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { sidebardata } from "./sidebardata";
@@ -9,6 +9,7 @@ import "./employeeSideBar.scss";
 const EmployeeSideBar = () => {
   const [sidebar, setSideBar] = useState(true);
   const showSideBar = () => setSideBar(!sidebar);
+  const history = useHistory();
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -16,6 +17,15 @@ const EmployeeSideBar = () => {
           <Link to="/connect/employee/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
+          <div className="em-bar-input">
+            <button
+              onClick={() => {
+                history.push("/logout");
+              }}
+            >
+              logout
+            </button>
+          </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSideBar}>
