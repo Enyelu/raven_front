@@ -6,6 +6,7 @@
   width: 110%;
   height: 80px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
 }
@@ -73,4 +74,7 @@
 
 span {
   margin-left: 16px;
+}
+.hr-bar-input {
+  margin-left: 300px;
 }

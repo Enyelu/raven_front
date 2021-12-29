@@ -35,7 +35,7 @@ const Login = () => {
             </form>
             <p className="login-link">
               <NavLink to="#" className="NavLink">
-                Forgot Password?
+                forgot password?
               </NavLink>
             </p>
           </div>
