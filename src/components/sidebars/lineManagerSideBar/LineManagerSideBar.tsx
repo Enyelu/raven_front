@@ -4,6 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { sidebardata } from "./sidebardata";
 import { IconContext } from "react-icons";
+import TimeDate from "../../timeDate/TimeDate";
 import "./LineManagerSideBar.scss";
 
 const LineManagerSideBar = () => {
@@ -17,6 +18,9 @@ const LineManagerSideBar = () => {
           <Link to="/connect/linemanager/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
+          <div className="lm-timer">
+            <TimeDate />
+          </div>
           <div className="lm-bar-input">
             <button
               onClick={() => {
