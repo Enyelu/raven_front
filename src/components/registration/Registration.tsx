@@ -29,8 +29,8 @@ function Registration() {
         }
     }, [])
 
-    function handleSubmit(){
-            //PreventDefault();
+    function handleSubmit() {
+            //e.PreventDefault();
             //call api
     } 
 
@@ -85,14 +85,7 @@ function Registration() {
                                 <label>Date of Birth</label>
                                 <input className='registration-input' type='date' placeholder='Birth Date'  required onChange={e => setEmployeeDetails({...employeeDetails, DOB: e.target.value})} value={employeeDetails.DOB}/>
                             </div>
-                            <div className='registration-input-div'>
-                                <label htmlFor='profile'>Profile Photo</label>
-                                <input className='registration-input' id='profile' type='file' placeholder='photo'  required onChange={e => setEmployeeDetails({...employeeDetails, Photo: e.target.value})} value={employeeDetails.Photo}/>
-                            </div>
-                            <div className='registration-input-div'>
-                                <label htmlFor="documents">Documents</label>
-                                <input className='registration-input' id='documents' type='file' placeholder='photo'  required multiple onChange={e => setEmployeeDetails({...employeeDetails, Documents: e.target.value})} value={employeeDetails.Documents} />
-                            </div>
+                            
                         </div>
                        
                     </div>
