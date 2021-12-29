@@ -4,6 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { sidebardata } from "./sidebardata";
 import { IconContext } from "react-icons";
+import TimeDate from "../../timeDate/TimeDate";
 import "./HrSideBar.scss";
 
 const HrSideBar = () => {
@@ -17,6 +18,9 @@ const HrSideBar = () => {
           <Link to="/connect/hr/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
+          <div className="hr-timer">
+            <TimeDate />
+          </div>
 
           <div className="hr-bar-input">
             <button

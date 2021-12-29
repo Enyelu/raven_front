@@ -17,7 +17,7 @@ const EmployeeSideBar = () => {
           <Link to="/connect/employee/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
-          <div className="lm-bar-input">
+          <div className="em-bar-input">
             <button
               onClick={() => {
                 history.push("/logout");
