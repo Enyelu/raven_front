@@ -15,7 +15,7 @@ const HrSideBar = () => {
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar">
-          <Link to="/connect/hr/profile" className="menu-bars">
+          <Link to="/hr/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
           <div className="hr-timer">

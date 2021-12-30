@@ -28,18 +28,8 @@ const Header = () => {
           </NavLink>
         </li>
         <li className="liHeader">
-          <NavLink to="/logout" className="link" activeClassName="ac">
-            logout
-          </NavLink>
-        </li>
-        <li className="liHeader">
           <NavLink to="/policy" className="link" activeClassName="ac">
             policy
-          </NavLink>
-        </li>
-        <li className="liHeader">
-          <NavLink to="/connect" className="link" activeClassName="ac">
-            connect
           </NavLink>
         </li>
       </ul>

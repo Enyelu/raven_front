@@ -15,7 +15,7 @@ const LineManagerSideBar = () => {
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar">
-          <Link to="/connect/linemanager/profile" className="menu-bars">
+          <Link to="/linemanager/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
           <div className="lm-timer">

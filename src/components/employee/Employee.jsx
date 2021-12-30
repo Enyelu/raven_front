@@ -10,16 +10,10 @@ const Employee = () => {
     <div>
       <EmployeeSideBar />
       <Switch>
-        <Route path="/connect/employee/Profile" component={Profile} />
-        <Route path="/connect/employee/hiring-manager" component={ContactHr} />
-        <Route
-          path="/connect/employee/line-manager"
-          component={ContactLineManager}
-        />
-        <Route
-          path="/connect/employee/change-passward"
-          component={ChangePassword}
-        />
+        <Route path="/employee/Profile" component={Profile} />
+        <Route path="/employee/hiring-manager" component={ContactHr} />
+        <Route path="/employee/line-manager" component={ContactLineManager} />
+        <Route path="/employee/change-passward" component={ChangePassword} />
       </Switch>
     </div>
   );

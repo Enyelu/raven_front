@@ -12,13 +12,10 @@ const Hr = () => {
     <div>
       <HrSideBar />
       <Switch>
-        <Route path="/connect/hr/employees" component={Employees} />
-        <Route
-          path="/connect/hr/message-employees"
-          component={MessageEmployees}
-        />
-        <Route path="/connect/hr/profile" component={Profile} />
-        <Route path="/connect/hr/change-password" component={ChangePassword} />
+        <Route path="/hr/employees" component={Employees} />
+        <Route path="/hr/message-employees" component={MessageEmployees} />
+        <Route path="/hr/profile" component={Profile} />
+        <Route path="/hr/change-password" component={ChangePassword} />
         <Route
           path="/connect/hr/message-employee"
           component={MessageEmployee}

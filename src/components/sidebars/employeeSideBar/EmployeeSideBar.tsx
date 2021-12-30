@@ -15,7 +15,7 @@ const EmployeeSideBar = () => {
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar">
-          <Link to="/connect/employee/profile" className="menu-bars">
+          <Link to="/employee/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
           <div className="em-timer">

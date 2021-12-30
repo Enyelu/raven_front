@@ -11,18 +11,15 @@ const LineManager = () => {
     <div>
       <LineManagerSideBar />
       <Switch>
-        <Route path="/connect/linemanager/profile" component={Profile} />
-        <Route path="/connect/linemanager/employees" component={Employees} />
+        <Route path="/linemanager/profile" component={Profile} />
+        <Route path="/linemanager/employees" component={Employees} />
         <Route
-          path="/connect/linemanager/message-employees"
+          path="/linemanager/message-employees"
           component={MessageEmployees}
         />
+        <Route path="/linemanager/change-passward" component={ChangePassword} />
         <Route
-          path="/connect/linemanager/change-passward"
-          component={ChangePassword}
-        />
-        <Route
-          path="/connect/linemanager/message-employee"
+          path="/linemanager/message-employee"
           component={MessageEmployee}
         />
       </Switch>
