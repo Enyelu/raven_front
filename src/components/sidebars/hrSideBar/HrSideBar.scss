@@ -4,7 +4,7 @@
   top: 0;
   left: -20px;
   width: 110%;
-  height: 80px;
+  height: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -75,6 +75,7 @@
 span {
   margin-left: 16px;
 }
+
 .hr-bar-input {
   margin-left: 20px;
 }
@@ -86,4 +87,7 @@ span {
 .hr-timer {
   margin-left: 200px;
   background-color: white;
+}
+.box-hr {
+  margin-left: 400px;
 }

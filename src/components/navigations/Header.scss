@@ -16,11 +16,19 @@
   align-items: center;
   margin: 0;
   margin-right: 7.35px;
+  gap: 1rem;
   padding: 0px;
   background: salmon;
 }
 .navHeader .ulHeader .liHeader {
   padding: 20px;
+}
+.box {
+  margin-inline-start: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
 }
 .link {
   text-decoration: none;

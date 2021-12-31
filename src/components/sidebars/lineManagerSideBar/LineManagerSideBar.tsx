@@ -18,10 +18,10 @@ const LineManagerSideBar = () => {
           <Link to="/linemanager/profile" className="menu-bars">
             <FaIcons.FaBars onClick={showSideBar} />
           </Link>
-          <div className="lm-timer">
+          <div className="lm-timer box-lm">
             <TimeDate />
           </div>
-          <div className="lm-bar-input">
+          <div className="lm-bar-input box-lm">
             <button
               onClick={() => {
                 history.push("/logout");
@@ -34,7 +34,7 @@ const LineManagerSideBar = () => {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSideBar}>
             <li className="navbar-toggle">
-              <Link to="/connect/linemanager/profile" className="menu-bars">
+              <Link to="/linemanager/profile" className="menu-bars">
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
