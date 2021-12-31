@@ -1,5 +1,4 @@
 import "./About.scss";
-import agent from '././App/api/Agents'; 
 const About = () => {
   return (
     <div className="about">
