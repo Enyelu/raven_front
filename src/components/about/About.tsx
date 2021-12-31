@@ -1,4 +1,5 @@
 import "./About.scss";
+import agent from '././App/api/Agents'; 
 const About = () => {
   return (
     <div className="about">
@@ -49,6 +50,9 @@ const About = () => {
           <div /> syntax is transformed at build time to
           React.createElement('div'). The example above is equivalent to:
         </p>
+      </div>
+      <div>
+        <h1>Type here</h1>
       </div>
     </div>
   );

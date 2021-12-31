@@ -60,7 +60,7 @@ function Registration() {
                                 <input className='registration-input' type='text' placeholder='Last Name' required onChange={e => setEmployeeDetails({...employeeDetails, LastName: e.target.value})} value={employeeDetails.LastName} />
                             </div>
                             <div className='registration-input-div'>
-                                <input className='registration-input' type='email' placeholder='Email' required value={employeeDetails.Email}/>
+                                <input className='registration-input' type='email' placeholder='Email' required disabled value={employeeDetails.Email}/>
                             </div>
                             <div className='registration-input-div'>
                                 <input className='registration-input' type='password' placeholder='Password' required onChange={e => setEmployeeDetails({...employeeDetails, Password: e.target.value})} value={employeeDetails.Password}/>
