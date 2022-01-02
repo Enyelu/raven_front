@@ -42,6 +42,7 @@ function App() {
         <Redirect to="/invite" />
         <Redirect to="/contactUs" />
         <Redirect to="/slackOnboard" />
+        <Redirect to="/testApi" />
       </Switch>
     </div>
   );

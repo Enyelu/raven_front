@@ -1,5 +1,4 @@
 import axios from "axios";
-import { url } from "inspector";
 
 axios.defaults.baseURL = 'https://localhost:5001/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -33,7 +32,7 @@ axios.interceptors.response.use(async response => {
     return Promise.reject(error);
 });
 
-const request = {
+const requests = {
     get: (url) => axios.get(url).then((response) => response.data),
     post: (url, body) => axios.post(url,body).then((response) => response.data),
     patch: (url, body) => axios.patch(url,body).then((response) => response.data),
@@ -43,49 +42,50 @@ const request = {
 
 const RavenAccess = {
     //AppUser axios-http methods
-getEmployee : (employeeEmail) => request.get(`/Employee/employeeEmail?employeeEmail=${employeeEmail}`),
-getAllEmployees : (pageNumber, pageSize) => request.get(`/Employee/AllEmployees?PageSIze=${pageSize}&PageNumber=${pageNumber}`),
-getAllDepartmentEmployees : (departmentName, pageSize, pageNumber) => request.get(`/Employee/AllDepartmentEmployees?DepartmentName=${departmentName}&PageSize=${pageSize}&PageNumber=${pageNumber}`),
-getAllDesignationEmployees : (departmentName, pageSize, pageNumber) => request.get(`/Employee/AllDesignationEmployees?DesignationName=${departmentName}/PageSize=${pageSize}/PageNumber=${pageNumber}`),
+getEmployee : (employeeEmail) => requests.get(`/Employee/employeeEmail?employeeEmail=${employeeEmail}`),
+getAllEmployees : (pageNumber, pageSize) => requests.get(`/Employee/AllEmployees?PageSize=${pageSize}&PageNumber=${pageNumber}`),
+getAllDepartmentEmployees : (departmentName, pageSize, pageNumber) => requests.get(`/Employee/AllDepartmentEmployees?DepartmentName=${departmentName}&PageSize=${pageSize}&PageNumber=${pageNumber}`),
+getAllDesignationEmployees : (departmentName, pageSize, pageNumber) => requests.get(`/Employee/AllDesignationEmployees?DesignationName=${departmentName}/PageSize=${pageSize}/PageNumber=${pageNumber}`),
 
-UpdateEmployee: (body) => request.put(`/Employee/Update`, body),
-ChangeEmployeeDesignation: (body) => request.patch(`/Employee/EmployeeDesignation`, body),
-ChangeEmployeeDepartment: (body) => request.patch(`/Employee/EmployeeDepartment`, body),
+UpdateEmployee: (body) => requests.put(`/Employee/Update`, body),
+ChangeEmployeeDesignation: (body) => requests.patch(`/Employee/EmployeeDesignation`, body),
+ChangeEmployeeDepartment: (body) => requests.patch(`/Employee/EmployeeDepartment`, body),
 //SendMail
 
 //SendBulkMail
-DeactivateEmployee: (body) => request.patch(`/Employee/Deactivate`, body),
-AssignRole: (body) => request.patch(`/Employee/AssignRole`, body), 
-EmployeesInRole: (roleName, pageSize, pageNumber) => request.get(`/Employee/InARole?roleName=${roleName}&PageSize=${pageSize}&PageNumber=${pageNumber}`),
-FormerEmployees: (pageSize, pageNumber) => request.get(`/Employee/FormerEmployees?PageSize=${pageSize}&PageNumber=${pageNumber}`),
+DeactivateEmployee: (body) => requests.patch(`/Employee/Deactivate`, body),
+AssignRole: (body) => requests.patch(`/Employee/AssignRole`, body), 
+EmployeesInRole: (roleName, pageSize, pageNumber) => requests.get(`/Employee/InARole?roleName=${roleName}&PageSize=${pageSize}&PageNumber=${pageNumber}`),
+FormerEmployees: (pageSize, pageNumber) => requests.get(`/Employee/FormerEmployees?PageSize=${pageSize}&PageNumber=${pageNumber}`),
 
 
-EmailConfirmationToken: (email) => request.get(`/Employee/EmailConfirmationToken?Email=${email}`),
-SlackOnboard: (firstName, lastName, email) => request.get(`/Employee/SlackOnboard?FirstName=${firstName}&LastName=${lastName}&Email=${email}`),
-RegistrationInvite: (firstName, lastName, email, department, designation, salary, startDate)
- => request.get(`/Employee/RegistrationInvite?FirstName=${firstName}&LastName=${lastName}&Email=${email}
-                &Department=${department}&Designation=${designation}&Salary=${salary}&StartDate=${startDate}`),
+EmailConfirmationToken: (email) => requests.get(`/Employee/EmailConfirmationToken?Email=${email}`),
+SlackOnboard: (firstName, lastName, email) => requests.get(`/Employee/SlackOnboard?FirstName=${firstName}&LastName=${lastName}&Email=${email}`),
+//RegistrationInvite: (firstName, lastName, email, department, designation, salary, startDate)
+ //=> requests.get(`/Employee/RegistrationInvite?FirstName=${firstName}&LastName=${lastName}&Email=${email}
+ //               &Department=${department}&Designation=${designation}&Salary=${salary}&StartDate=${startDate}`),
 
-    //Auth axios-http methods
-Registration: (body) => request.post(`/Auth/Registration`, body),
-Login: (email, password) => request.get(`/Auth/Login?Email=${email}&Password=${password}`),
-ForgotPassword: (email) => request.get(`/Auth/ForgotPassword/${email}`),
-ResetPassword: (body) => request.post(`/Auth/ResetPassword`, body), 
-UpdatePassword: (UserId, body) => request.patch(`/Auth/UpdatePassword/${UserId}`, body),
+    //Auth axios-http methods 
+Registration: (body) => requests.post(`/Auth/Registration`, body),
+Login: (email, password) => requests.get(`/Auth/Login?Email=${email}&Password=${password}`),
+ForgotPassword: (email) => requests.get(`/Auth/ForgotPassword/${email}`),
+ResetPassword: (body) => requests.post(`/Auth/ResetPassword`, body), 
+UpdatePassword: (UserId, body) => requests.patch(`/Auth/UpdatePassword/${UserId}`, body),
 //RefreshToken
 
     //Department axios-http methods
-CreateDepartment: (body) => request.post(`/Department/NewDepartment`, body),
-GetDepartment: (depertmentName) => request.get(`Department/ByName/${depertmentName}`), 
+CreateDepartment: (body) => requests.post(`/Department/NewDepartment`, body),
+GetDepartment: (depertmentName) => requests.get(`Department/ByName/${depertmentName}`), 
 
     //Designation axios-http methods
-CreateDesignation: (body) => request.post(`Designation/NewDesignation`, body),
-GetDesignation: (designationName) => request.get(`Designation/ByName/${designationName}`),
+CreateDesignation: (body) => requests.post(`Designation/NewDesignation`, body),
+GetDesignation: (designationName) => requests.get(`Designation/ByName/${designationName}`),
     
 //Roles axios-http methods 
-CreateRole: () => request.post(`/Role/CreateRole/${roleName}`),
-GetAllRoles: () => request.get(`/Role/AllRoles`),
-DeleteRole: () => request.delete(`/Role/${roleName}`),
+CreateRole: (roleName) => requests.post(`/Role/CreateRole/${roleName}`),
+GetAllRoles: () => requests.get(`/Role/AllRoles`),
+DeleteRole: (roleName) => requests.delete(`/Role/${roleName}`),
+
 }
 
 const agent = {
