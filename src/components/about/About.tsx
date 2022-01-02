@@ -1,8 +1,5 @@
 import "./About.scss";
-<<<<<<< HEAD
 
-=======
->>>>>>> 34385fbe1f95759a2ca61ed7f0e2e5b41af11bba
 const About = () => {
   return (
     <div className="about">
