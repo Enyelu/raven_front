@@ -1,16 +1,24 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
-import "./EmployeeInvite.scss";
-import InviteImage from "../images/inviteImage.png";
+import "./EmployeeAccountSetup.scss";
+import accountSetupImage from "../images/accountSetupImage.png";
 
 export default function EmployeeInvite() {
   const [formValues, setFormValues] = useState({
+    FirstName: "",
+    MiddleName: "",
+    LastName: "",
+    Role: "",
     Email: "",
+    UserName: "",
+    Password: "",
+    Gender: "",
     Department: "",
     Designation: "",
     Salary: "",
     Date: ""
-  });
+  }); 
+
   const departments = ["Engineering", "Accounts"];
   const designations = [".NET", "Node.js", "Accountant"];
 
@@ -18,14 +26,67 @@ export default function EmployeeInvite() {
     <div className="main-div">
       <div className="invite-image-div">
         <img
-          src={InviteImage}
+          src={accountSetupImage}
           className="invite-image"
           alt="registration image"
         />
       </div>
 
       <form className="invite-form">
-        <h3 className="invite-block-title">Invite New Employee</h3>
+        <h3 className="invite-block-title">Setup New Employee's Account</h3>
+
+        <div className="invite-input-div">
+          <input
+            className="invite-input"
+            type="text"
+            placeholder="First Name"
+            onChange={(e) =>
+              setFormValues({ ...formValues, FirstName: e.target.value })
+            }
+            value={formValues.FirstName}
+            required
+          />
+        </div>
+
+        <div className="invite-input-div">
+          <input
+            className="invite-input"
+            type="text"
+            placeholder="Middle Name"
+            onChange={(e) =>
+              setFormValues({ ...formValues, MiddleName: e.target.value })
+            }
+            value={formValues.MiddleName}
+            required
+          />
+        </div>
+
+        <div className="invite-input-div">
+          <input
+            className="invite-input"
+            type="text"
+            placeholder="Last Name"
+            onChange={(e) =>
+              setFormValues({ ...formValues, LastName: e.target.value })
+            }
+            value={formValues.LastName}
+            required
+          />
+        </div>
+
+        <div className="invite-input-div">
+          <input
+            className="invite-input"
+            type="text"
+            placeholder="Role"
+            onChange={(e) =>
+              setFormValues({ ...formValues, Role: e.target.value })
+            }
+            value={formValues.Role}
+            required
+          />
+        </div>
+
         <div className="invite-input-div">
           <input
             className="invite-input"
@@ -38,6 +99,56 @@ export default function EmployeeInvite() {
             required
           />
         </div>
+
+        <div className="invite-input-div">
+          <input
+            className="invite-input"
+            type="text"
+            placeholder="User Name"
+            onChange={(e) =>
+              setFormValues({ ...formValues, UserName: e.target.value })
+            }
+            value={formValues.UserName}
+            required
+          />
+        </div>
+
+        <div className="invite-input-div">
+          <input
+            className="invite-input"
+            type="text"
+            placeholder="Password"
+            onChange={(e) =>
+              setFormValues({ ...formValues, Password: e.target.value })
+            }
+            value={formValues.Password}
+            required
+          />
+        </div>
+
+        <div className="invite-input-div">
+                <div>
+                <label className="invite-label">Gender</label>
+                </div>
+                <select
+                  className="invite-input"
+                  onChange={(e) =>
+                    setFormValues({
+                      ...formValues,
+                      Gender: e.target.value
+                    })
+                  }
+                  value={formValues.Gender}
+                >
+                  <option key="Male" value="Male">
+                    Male
+                  </option>
+                  <option key="Female" value="Female">
+                    Female
+                  </option>
+                </select>
+              </div>
+
         <div>
           <div>
             <label className="invite-label" for="department">
@@ -45,7 +156,7 @@ export default function EmployeeInvite() {
             </label>
           </div>
           <select
-            className="invite-input"
+            className="invite-input" 
             name="department"
             id="department"
             onChange={(e) =>

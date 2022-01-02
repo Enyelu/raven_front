@@ -6,7 +6,7 @@ import Login from "./components/login/Login";
 import NotFound from "./components/notFound/NotFound";
 import Policy from "./components/policy/Policy";
 import Registration from "./components/registration/Registration";
-import EmployeeInvite from "./components/employeeInvite/EmployeeInvite";
+import EmployeeInvite from "./components/newEmployeeAccountSetUp/EmployeeAccountSetup";
 import SlackOnboard from "./components/slackOnboard/SlackOnboard";
 import ContactUs from "./components/contactUs/ContactUs";
 import Hr from "./components/hr/Hr";
