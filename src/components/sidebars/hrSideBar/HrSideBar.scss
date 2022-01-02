@@ -1,14 +1,14 @@
 .navbar {
   background-color: #060b26;
-  position: absolute;
-  top: 0;
   left: -20px;
   width: 110%;
-  height: 80px;
+  height: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 .menu-bars {
@@ -22,6 +22,7 @@
   width: 250px;
   height: 100vh;
   display: flex;
+  z-index: 9999;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -75,6 +76,7 @@
 span {
   margin-left: 16px;
 }
+
 .hr-bar-input {
   margin-left: 20px;
 }
@@ -86,4 +88,7 @@ span {
 .hr-timer {
   margin-left: 200px;
   background-color: white;
+}
+.box-hr {
+  margin-left: 400px;
 }
