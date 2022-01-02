@@ -1,0 +1,37 @@
+.profile-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+  width: 100%;
+  color: rgba(174, 34, 132, 0.6);
+  text-align: center;
+  background-color: #8ea4d0;
+  margin-top: 80px;
+  position: fixed;
+  top: 0;
+}
+
+.profile-1 {
+  background-color: #fff;
+  margin-top: 70px;
+  border-radius: 5px;
+}
+.profile-2 {
+  background-color: #fff;
+  margin-top: 70px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.horizontal {
+  margin-top: 40px;
+}
+.profile-status {
+  margin-top: 30px;
+}
+.profile-info {
+  margin-top: 30px;
+}
+.profile-occupation {
+  margin-top: 30px;
+}

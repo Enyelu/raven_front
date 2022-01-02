@@ -50,9 +50,6 @@ const About = () => {
           React.createElement('div'). The example above is equivalent to:
         </p>
       </div>
-      <div>
-        <h1>Type here</h1>
-      </div>
     </div>
   );
 };

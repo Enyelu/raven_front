@@ -12,6 +12,7 @@ const Hr = () => {
     <div>
       <HrSideBar />
       <Switch>
+        <Route path="/hr" exact component={Profile} />
         <Route path="/hr/employees" component={Employees} />
         <Route path="/hr/message-employees" component={MessageEmployees} />
         <Route path="/hr/profile" component={Profile} />
