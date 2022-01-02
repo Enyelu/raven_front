@@ -15,8 +15,6 @@ export default function SlackOnboard() {
                 </div>
                 <button className='slack-button' type='submit'>Invite</button>
             </form>
-    
-            <button className="slack-button" type="submit"> Invite</button>
-    </div>
-  );
+        </div>
+    )
 }
