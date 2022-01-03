@@ -1,5 +1,5 @@
 import axios from "axios";
-import { url } from "inspector";
+
 
 axios.defaults.baseURL = 'https://localhost:5001/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -62,12 +62,10 @@ FormerEmployees: (pageSize, pageNumber) => request.get(`/Employee/FormerEmployee
 
 EmailConfirmationToken: (email) => request.get(`/Employee/EmailConfirmationToken?Email=${email}`),
 SlackOnboard: (firstName, lastName, email) => request.get(`/Employee/SlackOnboard?FirstName=${firstName}&LastName=${lastName}&Email=${email}`),
-RegistrationInvite: (firstName, lastName, email, department, designation, salary, startDate)
- => request.get(`/Employee/RegistrationInvite?FirstName=${firstName}&LastName=${lastName}&Email=${email}
-                &Department=${department}&Designation=${designation}&Salary=${salary}&StartDate=${startDate}`),
+//CompleteAccountSetup: (body) => request.patch(`/Auth/RegistrationCompletion`, body),
 
     //Auth axios-http methods
-Registration: (body) => request.post(`/Auth/Registration`, body),
+AccountSetup: (body) => request.post(`/Auth/Registration`, body),
 Login: (email, password) => request.get(`/Auth/Login?Email=${email}&Password=${password}`),
 ForgotPassword: (email) => request.get(`/Auth/ForgotPassword/${email}`),
 ResetPassword: (body) => request.post(`/Auth/ResetPassword`, body), 
@@ -83,10 +81,19 @@ CreateDesignation: (body) => request.post(`Designation/NewDesignation`, body),
 GetDesignation: (designationName) => request.get(`Designation/ByName/${designationName}`),
     
 //Roles axios-http methods 
-CreateRole: () => request.post(`/Role/CreateRole/${roleName}`),
+CreateRole: (roleName) => request.post(`/Role/CreateRole/${roleName}`),
 GetAllRoles: () => request.get(`/Role/AllRoles`),
-DeleteRole: () => request.delete(`/Role/${roleName}`),
+DeleteRole: (roleName) => request.delete(`/Role/${roleName}`),
+
+//Probational AppUser
+AddProbationalUser: (body) => request.post(`/ProbationalAppUser`, body),
+GetAllProbationalAppUsers: (pageSize,pageNumber) => request.get(`/ProbationalAppUser/ConfirmAcceptance?PageSize=${pageSize}&PageNumber=${pageNumber}`),
+ProbationalAppUserConfirmAcceptance: (email) => request.patch(`/ProbationalAppUser/ConfirmAcceptance?probationalAppUserEmail=${email}`),
+
+
 }
+
+
 
 const agent = {
     RavenAccess
