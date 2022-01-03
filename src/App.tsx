@@ -5,8 +5,8 @@ import About from "./components/about/About";
 import Login from "./components/login/Login";
 import NotFound from "./components/notFound/NotFound";
 import Policy from "./components/policy/Policy";
-import Registration from "./components/registration/Registration";
-import EmployeeInvite from "./components/employeeInvite/EmployeeInvite";
+import CompleteAccountSetup from "./components/newEmployeeCompleteAccountSetup/NewEmployeeCompleteAccountSetup";
+import AccountSetup from "./components/newEmployeeAccountSetUp/EmployeeAccountSetup";
 import SlackOnboard from "./components/slackOnboard/SlackOnboard";
 import ContactUs from "./components/contactUs/ContactUs";
 import Hr from "./components/hr/Hr";
@@ -27,8 +27,8 @@ function App() {
         <Route path="/linemanager" component={LineManager} />
         <Route path="/employee" component={Employee} />
         <Route path="/" exact component={Home} />
-        <Route path="/registration" component={Registration} />
-        <Route path="/invite" component={EmployeeInvite} />
+        <Route path="/completeaccountsetup" component={CompleteAccountSetup} />
+        <Route path="/accountsetup" component={AccountSetup} />
         <Route path="/slackOnboard" component={SlackOnboard} />
         <Route path="/contactUs" component={ContactUs} />
         <Route component={NotFound} />
@@ -38,11 +38,10 @@ function App() {
         <Redirect to="/hr" />
         <Redirect to="/linemanager" />
         <Redirect to="/employee" />
-        <Redirect to="/registration" />
-        <Redirect to="/invite" />
+        <Redirect to="/completeaccountsetup" />
+        <Redirect to="/accountsetup" />
         <Redirect to="/contactUs" />
         <Redirect to="/slackOnboard" />
-        <Redirect to="/testApi" />
       </Switch>
     </div>
   );
