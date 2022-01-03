@@ -8,28 +8,33 @@
     background-color:white;
     justify-content: center;
     text-align:center;
-    display: flex;
+    display: column;
     flex-direction: row;
+    text-align: center;
 }
 
 .invite-form{
     background-color:whitesmoke;
-    width: 40%;
+    width: 45%;
     padding: 10px 0;
-    align-self:center;
-    margin: 30px;
-    
+    text-align: center !important;
+    float:none;
+    display: inline-block;
+    margin-bottom: 50px;
 }
+    
 
 .invite-image{
-    margin-top:150px;
+    margin-top:50px;
+    margin-bottom: 10px;
     width: 20%;
-    height: 30%;
+    height: 20%;
     align-self: center;
+    background-color: white;
 }
 
 .invite-image-div{
-    margin: 0;
+    margin: 30px 5px 0 0;
     align-self: center;
     justify-content: center;
     justify-items: center;
@@ -37,7 +42,7 @@
 .invite-block-title{
     font-style: normal;
     font-family: Georgia;
-    margin: 10px 0;
+    margin: 10px 2px;
 }
 
 .invite-input{

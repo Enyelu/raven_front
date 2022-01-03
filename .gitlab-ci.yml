@@ -1,0 +1,12 @@
+stages:          
+  - deploy
+
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - ls -ltr
+    - cd build
+    - pm2 serve build 3000 --spa 
+  only: ['main']

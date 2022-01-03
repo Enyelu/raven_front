@@ -4,6 +4,10 @@ import profile from "../images/a.png";
 import email from "../images/email.jpg";
 import pass from "../images/pass.png";
 import "./login.scss";
+
+
+
+
 const Login = () => {
   return (
     <div className="login-main">
