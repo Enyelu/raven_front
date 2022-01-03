@@ -4,25 +4,79 @@ import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as FcIcons from "react-icons/fc";
 import "./profile.scss";
-const Profile = () => {
-  const [profileImg, setProfileImg] = useState({ image: null });
-  const onImageChange = (event) => {
+// interface ProfileData {
+//   firstName: string;
+//   lastName: string;
+//   status: string;
+//   cell: number;
+//   socia: string[];
+//   started: string;
+//   worked: number;
+//   department: string;
+//   time: string;
+//   place: string;
+//   ID: number;
+//   socialStatus: string;
+//   birth: string;
+//   age: number;
+//   hobby: string;
+//   houseNo: string;
+//   street: string;
+//   state: string;
+//   specialization: string;
+// }
+const Profile = (props: any): JSX.Element => {
+  const {
+    firstName,
+    lastName,
+    status,
+    cell,
+    taxNumber,
+    cardNumber,
+    MarryStatus,
+    gender,
+    socia,
+    started,
+    worked,
+    department,
+    time,
+    place,
+    ID,
+    socialStatus,
+    birth,
+    age,
+    hobby,
+    houseNo,
+    street,
+    state,
+    specialization
+  } = props.hrData;
+  const [profileImg, setProfileImg] = useState<any>(null);
+  const onImageChange = (event: any) => {
     if (event.target.files && event.target.files[0]) {
       let img = event.target.files[0];
-      setProfileImg({
-        image: URL.createObjectURL(img)
-      });
+      setProfileImg(URL.createObjectURL(img));
     }
   };
   return (
     <div className="profile-container">
       <div className="profile-1 profile-item">
         <div className="profile-status">
-          <h4>Jone Anas</h4>
-          <span>{<FaIcons.FaUserCheck />} Status:Active</span>
-          <p>{<FaIcons.FaPhoneAlt />} 224-667-4566</p>
-          <p>{<FaIcons.FaShuttleVan />} 23-456-678</p>
-          <p>{<FaIcons.FaMoneyBillWaveAlt />} 9900</p>
+          <h4>
+            {firstName} {lastName}
+          </h4>
+          <span>
+            {<FaIcons.FaUserCheck />} Status: {status}
+          </span>
+          <p>
+            {<FaIcons.FaPhoneAlt />} {cell}
+          </p>
+          <p>
+            {<FaIcons.FaShuttleVan />} {taxNumber}
+          </p>
+          <p>
+            {<FaIcons.FaMoneyBillWaveAlt />} {cardNumber}
+          </p>
           <ul className="profile-icons">
             <li>
               <Link to="">
@@ -50,17 +104,23 @@ const Profile = () => {
         <div className="profile-info">
           <h5>{<FcIcons.FcConferenceCall />}Hire Information</h5>
           <p>
-            Started on:<span>02/01/2020</span>
+            Started on:<span>{started}</span>
           </p>
           <p>
-            Worked here for:<span>2 years</span>{" "}
+            Worked here for:<span>{worked} years</span>{" "}
           </p>
         </div>
         <hr className="horizontal" />
         <div className="profile-occupation">
-          <span>{<FaIcons.FaUserCog />} IT</span>
-          <span>{<FcIcons.FcClock />} Full-Time</span>
-          <span>{<FcIcons.FcHome />} Lagos, Nigeria</span>
+          <span>
+            {<FaIcons.FaUserCog />} {department}
+          </span>
+          <span>
+            {<FcIcons.FcClock />} {time}
+          </span>
+          <span>
+            {<FcIcons.FcHome />} {place}
+          </span>
         </div>
       </div>
       <div className="profile-2 profile-item">
@@ -69,7 +129,7 @@ const Profile = () => {
         </div>
         <hr />
         <div className="profile-imgdiv">
-          <img src={profileImg.image} alt className="profile-img" />
+          <img src={profileImg} alt="" className="profile-img" />
           <p>Select Image</p>
           <input
             type="file"
@@ -84,61 +144,64 @@ const Profile = () => {
           <div className="employeeStatus">
             <div>
               <strong>Employee ID</strong>
-              <div className="profile-common">1233</div>
+              <div className="profile-common">{ID}</div>
             </div>
             <div className="status-1">
               <strong>Status</strong>
-              <div className="profile-common">Active</div>
+              <div className="profile-common">{socialStatus}</div>
             </div>
           </div>
           <div className="employeeStatus">
             <div>
               <strong>Name</strong>
-              <div className="profile-common">Jonas Anas</div>
+              <div className="profile-common">
+                {firstName} {lastName}
+              </div>
             </div>
             <div className="status-1">
               <strong>Gender</strong>
-              <div className="profile-common">Male</div>
+              <div className="profile-common">{gender}</div>
             </div>
             <div className="status-1">
               <strong>Social status</strong>
-              <div className="profile-common">Married</div>
+              <div className="profile-common">{MarryStatus}</div>
             </div>
           </div>
           <div className="employeeStatus">
             <div>
               <strong>Date of birth</strong>
               <div className="profile-common">
-                10/10/1986{<FcIcons.FcCalendar />}
+                {birth}
+                {<FcIcons.FcCalendar />}
               </div>
             </div>
             <div className="status-1">
               <strong>Age</strong>
-              <div className="profile-common">35</div>
+              <div className="profile-common">{age}</div>
             </div>
             <div className="status-1">
               <strong>Hobby</strong>
-              <div className="profile-common">Playing Chess</div>
+              <div className="profile-common">{hobby}</div>
             </div>
           </div>
           <div className="employeeStatus">
             <div>
               <strong>House Number</strong>
-              <div className="profile-common">No. 10</div>
+              <div className="profile-common">{houseNo}</div>
             </div>
             <div className="status-1">
               <strong>Street</strong>
-              <div className="profile-common">Murtala Rabo street</div>
+              <div className="profile-common">{street}</div>
             </div>
             <div className="status-1">
               <strong>State</strong>
-              <div className="profile-common">Lagos</div>
+              <div className="profile-common">{state}</div>
             </div>
           </div>
           <div className="employeeStatus">
             <div>
               <strong>Specialization</strong>
-              <div className="profile-common">Hiring Developers</div>
+              <div className="profile-common">{specialization}</div>
             </div>
           </div>
         </div>
