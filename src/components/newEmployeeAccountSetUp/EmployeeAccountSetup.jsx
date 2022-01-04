@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import "./EmployeeAccountSetup.scss";
 import accountSetupImage from "../images/accountSetupImage.png";
+import agent from "../api/Agent";
 
-export default function EmployeeInvite() {
+
+export default function EmployeeAccountSetup() {
+  
   const [formValues, setFormValues] = useState({
     FirstName: "",
     MiddleName: "",
@@ -13,12 +16,39 @@ export default function EmployeeInvite() {
     UserName: "",
     Password: "",
     Gender: "",
-    Department: "",
     Designation: "",
-    Salary: "",
-    Date: ""
+    Department: "",
+    Salary: 0,
+    StartDate: "" 
   }); 
 
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    console.log('hello');
+    
+    if(formValues.Department !== '' && formValues.Designation !== '' && formValues.Gender !== '')
+    {
+      const response = await agent.RavenAccess.AccountSetup(formValues); 
+    
+      if(response !== null)
+      {
+        if(response.data === true)
+        {
+            alert(response.message);
+        }
+        else
+        {
+          alert(response.message);
+        }
+        console.log(response)
+      }
+    }
+    else
+    {
+      alert('Department, designation and gender must be selected.')
+    }
+  }
+  
   const departments = ["Engineering", "Accounts"];
   const designations = [".NET", "Node.js", "Accountant"];
 
@@ -32,7 +62,7 @@ export default function EmployeeInvite() {
         />
       </div>
 
-      <form className="invite-form">
+      <form className="invite-form" onSubmit={handleSubmit}>
         <h3 className="invite-block-title">Setup New Employee's Account</h3>
 
         <div className="invite-input-div">
@@ -116,7 +146,7 @@ export default function EmployeeInvite() {
         <div className="invite-input-div">
           <input
             className="invite-input"
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={(e) =>
               setFormValues({ ...formValues, Password: e.target.value })
@@ -151,7 +181,7 @@ export default function EmployeeInvite() {
 
         <div>
           <div>
-            <label className="invite-label" for="department">
+            <label className="invite-label" htmlFor="department">
               Department
             </label>
           </div>
@@ -174,7 +204,7 @@ export default function EmployeeInvite() {
 
         <div>
           <div>
-            <label for="designation">Designation</label>
+            <label htmlFor="designation">Designation</label>
           </div>
           <select
             className="invite-input"
@@ -203,13 +233,13 @@ export default function EmployeeInvite() {
             onChange={(e) =>
               setFormValues({ ...formValues, Salary: e.target.value })
             }
-            value={formValues.Salary}
+            value={parseFloat(formValues.Salary)}
           />
         </div>
         <div className="invite-input-div">
           <div className="start-date">
             <div>
-              <label for="start-date-option">Start Date</label>
+              <label htmlFor="start-date-option">Start Date</label>
             </div>
             <div>
               <input
@@ -219,15 +249,15 @@ export default function EmployeeInvite() {
                 placeholder="Start Date"
                 required
                 onChange={(e) =>
-                  setFormValues({ ...formValues, Date: e.target.value })
+                  setFormValues({ ...formValues, StartDate: e.target.value })
                 }
-                value={formValues.Date}
+                value={formValues.StartDate}
               />
             </div>
           </div>
         </div>
         <button className="invite-button" type="submit">
-          Invite
+          Register
         </button>
       </form>
     </div>
