@@ -5,6 +5,7 @@ deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
     - npm install
+    - cd  /home/gitlab-runner/builds/ZY7-xYHJ/0/access-talent-program/raven_frontend
     - npm run build
     - ls -ltr
     - cd build
