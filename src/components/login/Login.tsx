@@ -17,6 +17,7 @@ const [loginCredentials, setLoginCredentials] = useState({email: "", password:""
 
 const handleSubmit =  async (e:any) =>{
 e.preventDefault();
+localStorage.setItem('Email', loginCredentials.email)
 
 const response = await agent.RavenAccess.Login(loginCredentials.email, loginCredentials.password);
 
@@ -26,9 +27,7 @@ if(response !== null)
   localStorage.setItem("LoginResponse", stingifiedResponse);
   localStorage.setItem("token",response.data.token)
   console.log(response.data);
-
-
-
+  
   const jwtDecoded = jwtDecode(response.data.token);
   const stringJwtDecoded = JSON.stringify(jwtDecoded);
   localStorage.setItem('claims',stringJwtDecoded)

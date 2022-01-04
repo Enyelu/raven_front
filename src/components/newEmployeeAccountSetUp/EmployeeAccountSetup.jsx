@@ -5,31 +5,47 @@ import accountSetupImage from "../images/accountSetupImage.png";
 import agent from "../api/Agent";
 
 
-export default function EmployeeInvite() {
+export default function EmployeeAccountSetup() {
   
   const [formValues, setFormValues] = useState({
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    role: "",
-    email: "",
-    userName: "",
-    password: "",
-    gender: "",
-    department: "",
-    designation: "",
-    salary: 0,
-    date: "" 
+    FirstName: "",
+    MiddleName: "",
+    LastName: "",
+    Role: "",
+    Email: "",
+    UserName: "",
+    Password: "",
+    Gender: "",
+    Designation: "",
+    Department: "",
+    Salary: 0,
+    StartDate: "" 
   }); 
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
-
-    const response = await agent.RavenAccess.AccountSetup(formValues); 
+    console.log('hello');
     
-    if(response !== null)
+    if(formValues.Department !== '' && formValues.Designation !== '' && formValues.Gender !== '')
     {
-      console.log(response)
+      const response = await agent.RavenAccess.AccountSetup(formValues); 
+    
+      if(response !== null)
+      {
+        if(response.data === true)
+        {
+            alert(response.message);
+        }
+        else
+        {
+          alert(response.message);
+        }
+        console.log(response)
+      }
+    }
+    else
+    {
+      alert('Department, designation and gender must be selected.')
     }
   }
   
@@ -55,9 +71,9 @@ export default function EmployeeInvite() {
             type="text"
             placeholder="First Name"
             onChange={(e) =>
-              setFormValues({ ...formValues, firstName: e.target.value })
+              setFormValues({ ...formValues, FirstName: e.target.value })
             }
-            value={formValues.firstName}
+            value={formValues.FirstName}
             required
           />
         </div>
@@ -68,9 +84,9 @@ export default function EmployeeInvite() {
             type="text"
             placeholder="Middle Name"
             onChange={(e) =>
-              setFormValues({ ...formValues, middleName: e.target.value })
+              setFormValues({ ...formValues, MiddleName: e.target.value })
             }
-            value={formValues.middleName}
+            value={formValues.MiddleName}
             required
           />
         </div>
@@ -81,9 +97,9 @@ export default function EmployeeInvite() {
             type="text"
             placeholder="Last Name"
             onChange={(e) =>
-              setFormValues({ ...formValues, lastName: e.target.value })
+              setFormValues({ ...formValues, LastName: e.target.value })
             }
-            value={formValues.lastName}
+            value={formValues.LastName}
             required
           />
         </div>
@@ -94,9 +110,9 @@ export default function EmployeeInvite() {
             type="text"
             placeholder="Role"
             onChange={(e) =>
-              setFormValues({ ...formValues, role: e.target.value })
+              setFormValues({ ...formValues, Role: e.target.value })
             }
-            value={formValues.role}
+            value={formValues.Role}
             required
           />
         </div>
@@ -107,9 +123,9 @@ export default function EmployeeInvite() {
             type="text"
             placeholder="Employee Email"
             onChange={(e) =>
-              setFormValues({ ...formValues, email: e.target.value })
+              setFormValues({ ...formValues, Email: e.target.value })
             }
-            value={formValues.email}
+            value={formValues.Email}
             required
           />
         </div>
@@ -120,9 +136,9 @@ export default function EmployeeInvite() {
             type="text"
             placeholder="User Name"
             onChange={(e) =>
-              setFormValues({ ...formValues, userName: e.target.value })
+              setFormValues({ ...formValues, UserName: e.target.value })
             }
-            value={formValues.userName}
+            value={formValues.UserName}
             required
           />
         </div>
@@ -133,9 +149,9 @@ export default function EmployeeInvite() {
             type="password"
             placeholder="Password"
             onChange={(e) =>
-              setFormValues({ ...formValues, password: e.target.value })
+              setFormValues({ ...formValues, Password: e.target.value })
             }
-            value={formValues.password}
+            value={formValues.Password}
             required
           />
         </div>
@@ -149,10 +165,10 @@ export default function EmployeeInvite() {
                   onChange={(e) =>
                     setFormValues({
                       ...formValues,
-                      gender: e.target.value
+                      Gender: e.target.value
                     })
                   }
-                  value={formValues.gender}
+                  value={formValues.Gender}
                 >
                   <option key="Male" value="Male">
                     Male
@@ -174,9 +190,9 @@ export default function EmployeeInvite() {
             name="department"
             id="department"
             onChange={(e) =>
-              setFormValues({ ...formValues, department: e.target.value })
+              setFormValues({ ...formValues, Department: e.target.value })
             }
-            value={formValues.department}
+            value={formValues.Department}
           >
             {departments.map((department) => (
               <option key={department} value={department}>
@@ -195,9 +211,9 @@ export default function EmployeeInvite() {
             name="designation"
             id="designation"
             onChange={(e) =>
-              setFormValues({ ...formValues, designation: e.target.value })
+              setFormValues({ ...formValues, Designation: e.target.value })
             }
-            value={formValues.designation}
+            value={formValues.Designation}
           >
             {designations.map((designation) => (
               <option key={designation} value={designation}>
@@ -215,9 +231,9 @@ export default function EmployeeInvite() {
             required
             min="30000"
             onChange={(e) =>
-              setFormValues({ ...formValues, salary: e.target.value })
+              setFormValues({ ...formValues, Salary: e.target.value })
             }
-            value={parseFloat(formValues.salary)}
+            value={parseFloat(formValues.Salary)}
           />
         </div>
         <div className="invite-input-div">
@@ -233,9 +249,9 @@ export default function EmployeeInvite() {
                 placeholder="Start Date"
                 required
                 onChange={(e) =>
-                  setFormValues({ ...formValues, date: e.target.value })
+                  setFormValues({ ...formValues, StartDate: e.target.value })
                 }
-                value={formValues.date.toString()}
+                value={formValues.StartDate}
               />
             </div>
           </div>

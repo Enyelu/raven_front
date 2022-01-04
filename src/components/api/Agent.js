@@ -62,7 +62,7 @@ FormerEmployees: (pageSize, pageNumber) => request.get(`/Employee/FormerEmployee
 
 EmailConfirmationToken: (email) => request.get(`/Employee/EmailConfirmationToken?Email=${email}`),
 SlackOnboard: (firstName, lastName, email) => request.get(`/Employee/SlackOnboard?FirstName=${firstName}&LastName=${lastName}&Email=${email}`),
-//CompleteAccountSetup: (body) => request.patch(`/Auth/RegistrationCompletion`, body),
+CompleteAccountSetup: (body) => request.patch(`/Auth/RegistrationCompletion`, body),
 
     //Auth axios-http methods
 AccountSetup: (body) => request.post(`/Auth/Registration`, body),
