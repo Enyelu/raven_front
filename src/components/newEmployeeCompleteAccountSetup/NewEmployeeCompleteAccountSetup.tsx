@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from "react";
 import "./NewEmployeeCompleteAccountSetup.scss";
 import CompleteRegistrationImage from "../images/CompleteRegistrationImage.png";
+import agent from "../api/Agent";
+import { stringify } from "querystring";
 
-function Registration() {
+function NewEmployeeCompleteAccountSetup() {
   const [employeeDetails, setEmployeeDetails] = useState({
-    Email: "",
+    EmployeeEmail: "",
     UserName: "",
     PhoneNumber: "",
     DOB: "",  
@@ -18,12 +20,19 @@ function Registration() {
   }); 
 
   useEffect(() => {
-    // get user email from local storage and then pass as part of parameters for api call
+     const email = localStorage.getItem('Email');
+    setEmployeeDetails({...employeeDetails, EmployeeEmail: `${email}`});
+
   }, []);
 
-  function handleSubmit() {
-    //e.PreventDefault();
-    //call api
+  
+
+  const handleSubmit =  async (e:any) =>{
+    e.preventDefault();
+    
+    const response = await agent.RavenAccess.CompleteAccountSetup(employeeDetails);
+    alert(response.message)
+  
   }
 
   return (
@@ -62,7 +71,6 @@ function Registration() {
                 <input
                   className="registration-input"
                   type="number"
-                  minLength={11}
                   placeholder="PhoneNumber"
                   required
                   onChange={(e) =>
@@ -94,7 +102,7 @@ function Registration() {
               <div className="registration-input-div">
                 <input
                   className="registration-input"
-                  type="email"
+                  type="text"
                   placeholder="Street Number"
                   required
                   onChange={(e) =>
@@ -190,4 +198,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default NewEmployeeCompleteAccountSetup;
