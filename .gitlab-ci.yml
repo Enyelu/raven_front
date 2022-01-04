@@ -4,7 +4,7 @@ stages:
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
-    - npm install -g npm@latest
+    - sudo npm install -g npm@latest
     - npm --version
     - npm run build
     - ls -ltr
