@@ -4,8 +4,8 @@ stages:
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
-    - npm install latest-version 
-    - npm install node@16.12.0
+    - npm install 
+    #- npm install node@16.12.0
     - npm --version
     - node -v
     - npm run build
