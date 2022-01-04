@@ -4,7 +4,7 @@ stages:
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
-    - sudo npm install -g npm@latest
+    - nvm install 16.0.0
     - npm --version
     - npm run build
     - ls -ltr
