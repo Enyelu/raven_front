@@ -6,7 +6,7 @@ export default function SlackOnboard() {
     return (
         <div className='slack-main-div'>
             <div className='slack-image-div'>
-                <img src={SlackImage} className='slack-image' alt='registration image'/>
+                <img src={SlackImage} className='slack-image' alt='registration'/>
             </div>
             <form className ="slack-form">
                 <h3 className='slack-block-title'>Onboard Slack</h3>
