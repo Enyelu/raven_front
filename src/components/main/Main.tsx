@@ -38,22 +38,84 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
     const { images, currentImage } = this.state;
     return (
       <div className="homeContainer">
-        <div className="home home--1">
-          <img
-            src={images[currentImage]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
+        <div className="card bg-dark text-white">
+          <img src={images[currentImage]} alt="images" className="card-img" />
         </div>
-        <div className="home home--2">
-          <img
-            src={images[0]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
+
+        <div className="row row-cols-1 row-cols-md-2 g-4">
+          <div className="col">
+            <div className="card">
+              <img
+                src={images[3]}
+                alt="cleaning images"
+                width="100%"
+                height="100%"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card">
+              <img
+                src={images[3]}
+                alt="cleaning images"
+                width="100%"
+                height="100%"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card">
+              <img
+                src={images[3]}
+                alt="cleaning images"
+                width="100%"
+                height="100%"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card">
+              <img
+                src={images[3]}
+                alt="cleaning images"
+                width="100%"
+                height="100%"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div className="home home--3">
           <img
             src={images[3]}
