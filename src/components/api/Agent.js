@@ -90,7 +90,6 @@ AddProbationalUser: (body) => request.post(`/ProbationalAppUser`, body),
 GetAllProbationalAppUsers: (pageSize,pageNumber) => request.get(`/ProbationalAppUser/ConfirmAcceptance?PageSize=${pageSize}&PageNumber=${pageNumber}`),
 ProbationalAppUserConfirmAcceptance: (email) => request.patch(`/ProbationalAppUser/ConfirmAcceptance?probationalAppUserEmail=${email}`),
 
-
 }
 
 

@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./NewEmployeeCompleteAccountSetup.scss";
 import CompleteRegistrationImage from "../images/CompleteRegistrationImage.png";
 import agent from "../api/Agent";
-import { stringify } from "querystring";
 
 function NewEmployeeCompleteAccountSetup() {
   const [employeeDetails, setEmployeeDetails] = useState({
@@ -19,20 +18,21 @@ function NewEmployeeCompleteAccountSetup() {
     Country: "",
   }); 
 
-  useEffect(() => {
-     const email = localStorage.getItem('Email');
-    setEmployeeDetails({...employeeDetails, EmployeeEmail: `${email}`});
-
-  }, []);
-
-  
-
   const handleSubmit =  async (e:any) =>{
     e.preventDefault();
-    
-    const response = await agent.RavenAccess.CompleteAccountSetup(employeeDetails);
-    alert(response.message)
-  
+    const email = localStorage.getItem('Email');
+
+    if(email !== null)
+    {
+      setEmployeeDetails({...employeeDetails, EmployeeEmail: `${email}`});
+
+      const response = await agent.RavenAccess.CompleteAccountSetup(employeeDetails);
+      alert(response.message)
+    }
+    else
+    {
+      alert('Unable to fetch email. Try again')
+    }
   }
 
   return (
