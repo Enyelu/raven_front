@@ -4,8 +4,8 @@ stages:
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
-    - npm install 
-    - npm install node@16.13.1
+    - sudo npm install 
+    #- npm install node@16.13.1
     - npm --version
     - node -v
     - npm run build
