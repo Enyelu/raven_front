@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as FcIcons from "react-icons/fc";
 import "./profile.scss";
@@ -79,24 +78,24 @@ const Profile = (props: any): JSX.Element => {
           </p>
           <ul className="profile-icons">
             <li>
-              <Link to="">
+              <a href={`${socia[0]}`} target="_blank" rel="noreferrer">
                 <FaIcons.FaFacebookF />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="">
+              <a href={`${socia[1]}`} target="_blank" rel="noreferrer">
                 <FaIcons.FaLinkedinIn />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="">
+              <a href={`${socia[2]}`} target="_blank" rel="noreferrer">
                 <FaIcons.FaTwitter />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="">
+              <a href={`${socia[3]}`} target="_blank" rel="noreferrer">
                 <FaIcons.FaMediumM />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
