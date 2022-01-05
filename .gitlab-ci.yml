@@ -4,10 +4,11 @@ stages:
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
-    - sudo npm cache clean -f
-    - sudo npm install -g n
-    - sudo n stable
-    - npm install
+    #- sudo npm cache clean -f
+    #- sudo npm install -g n
+    #- sudo n stable
+    #- npm install
+    - curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -sudo apt-get install -y nodejs
     #- npm install node@16.13.1
     #- npm --version
     - node -v
