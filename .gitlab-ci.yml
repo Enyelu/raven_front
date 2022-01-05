@@ -18,6 +18,7 @@ deploy-job:      # This job runs in the deploy stage.
     - ls -ltr
     - pwd
     - cd build
+    - ls
     - pm2 serve build 3000 --spa 
     - pm2 list
   only: ['main']
