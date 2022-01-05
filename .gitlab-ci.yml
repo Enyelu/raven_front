@@ -8,7 +8,7 @@ deploy-job:      # This job runs in the deploy stage.
     #- sudo npm install -g n
     #- sudo n stable
     #- npm install
-    - curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E sh -sudo apt-get install -y nodejs
+    - curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -sudo apt-get install -y nodejs
     #- npm install node@16.13.1
     #- npm --version
     - node -v
