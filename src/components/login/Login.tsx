@@ -7,14 +7,11 @@ import profile from "../images/a.png";
 import email from "../images/email.jpg";
 import pass from "../images/pass.png";
 import "./login.scss";
-<<<<<<< HEAD
-=======
-import React, {useState} from "react"
-import { useHistory } from 'react-router-dom';
-import agent from "../api/Agent";
-import jwtDecode from "jwt-decode";
+// import React, {useState} from "react"
+// import { useHistory } from 'react-router-dom';
+// import agent from "../api/Agent";
+// import jwtDecode from "jwt-decode";
 //import jwtVerify from "jwt-verify";
->>>>>>> 8d63e3d53bd0029a87b93a2535b660d32610522b
 
 const Login = () => {
   let history = useHistory();

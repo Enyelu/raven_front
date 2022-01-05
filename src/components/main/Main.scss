@@ -9,51 +9,13 @@
   z-index: 100;
 }
 
-// .home {
-//   background-color: #eee;
-//   padding: 25px;
-//   font-size: 30px;
-//   font-family: sans-serif;
-//   &--1 {
-//     background-color: violet;
-//     text-align: center;
-//     padding: 3px;
-//     margin: 0;
-//     margin-top: 82px;
-//     margin-left: -1px;
-//     height: 800px;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-//   &--2 {
-//     background-color: palevioletred;
-//     text-align: center;
-//     padding: 3px;
-//     height: 1000px;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-//   &--3 {
-//     background-color: slateblue;
-//     text-align: center;
-//     padding: 3px;
-//     height: 1000px;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-//   &--4 {
-//     background-color: royalblue;
-//     text-align: center;
-//     padding: 3px;
-//     padding: 3px;
-//     grid-row: 4/-1;
-//     grid-column: 1/-1;
-//     height: 400px;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-// }
+.removeDefault {
+  color: RGB(1, 2, 3);
+  text-decoration: none;
+}
+
+.removeDefault:hover {
+  color: #00a0c6;
+  text-decoration: none;
+  cursor: pointer;
+}

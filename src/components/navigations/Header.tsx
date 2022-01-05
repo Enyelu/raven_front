@@ -67,15 +67,6 @@ const Header = () => {
                 Login
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link link"
-                to="/register"
-                activeClassName="ac"
-              >
-                Register
-              </NavLink>
-            </li>
           </ul>
         </div>
       </nav>
