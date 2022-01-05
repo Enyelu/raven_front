@@ -34,7 +34,7 @@ const Profile = (props: any): JSX.Element => {
     cardNumber,
     MarryStatus,
     gender,
-    socia,
+    //socia,
     started,
     worked,
     department,
