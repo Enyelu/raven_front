@@ -15,7 +15,7 @@ const LineManager = () => {
       <Switch>
         <Route path="/linemanager" exact component={Profile} />
 
-        <Route path="/linemanager/employees" component={Employees} />
+      <Route path="/linemanager/employees" component={Employees} />
         <Route
           path="/linemanager/profile"
           render={(props) => <Profile {...props} hrData={lineData} />}
