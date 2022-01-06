@@ -44,7 +44,7 @@ const request = {
 const RavenAccess = {
     //AppUser axios-http methods
 getEmployee : (employeeEmail) => request.get(`/Employee/employeeEmail?employeeEmail=${employeeEmail}`),
-getAllEmployees : (pageNumber, pageSize) => request.get(`/Employee/AllEmployees?PageSIze=${pageSize}&PageNumber=${pageNumber}`),
+getAllEmployees : (pageNumber, pageSize) => request.get(`/Employee/AllEmployees?PageSize=${pageSize}&PageNumber=${pageNumber}`),
 getAllDepartmentEmployees : (departmentName, pageSize, pageNumber) => request.get(`/Employee/AllDepartmentEmployees?DepartmentName=${departmentName}&PageSize=${pageSize}&PageNumber=${pageNumber}`),
 getAllDesignationEmployees : (departmentName, pageSize, pageNumber) => request.get(`/Employee/AllDesignationEmployees?DesignationName=${departmentName}/PageSize=${pageSize}/PageNumber=${pageNumber}`),
 

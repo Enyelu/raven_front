@@ -233,7 +233,7 @@ export default function EmployeeAccountSetup() {
             onChange={(e) =>
               setFormValues({ ...formValues, Salary: e.target.value })
             }
-            value={parseFloat(formValues.Salary)}
+            value={formValues.Salary}
           />
         </div>
         <div className="invite-input-div">

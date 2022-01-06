@@ -13,6 +13,7 @@ import Hr from "./components/hr/Hr";
 import Employee from "./components/employee/Employee";
 import LineManager from "./components/lineManager/LineManager";
 import "./App.scss";
+import Employees from "./components/employees/Employees"
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/accountsetup" component={AccountSetup} />
         <Route path="/slackOnboard" component={SlackOnboard} />
         <Route path="/contactUs" component={ContactUs} />
+        <Route path="/employees" component={Employees} />
         <Route component={NotFound} />
         <Redirect to="/about" />
         <Redirect to="/login" />
@@ -42,6 +44,7 @@ function App() {
         <Redirect to="/accountsetup" />
         <Redirect to="/contactUs" />
         <Redirect to="/slackOnboard" />
+        <Redirect to="/employees" />
       </Switch>
     </div>
   );
