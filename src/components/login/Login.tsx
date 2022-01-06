@@ -32,7 +32,7 @@ if(response !== null)
   const stringJwtDecoded = JSON.stringify(jwtDecoded);
   localStorage.setItem('claims',stringJwtDecoded)
   console.log(jwtDecoded)
-  history.push('/hr')
+  history.push('/hr/profile')
 }
 
 }

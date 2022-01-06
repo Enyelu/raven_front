@@ -54,7 +54,7 @@ function NewEmployeeCompleteAccountSetup() {
               <div className="registration-input-div">
                 <input
                   className="registration-input"
-                  type="text"
+                  type="text" 
                   placeholder="UserName"
                   required
                   onChange={(e) =>
