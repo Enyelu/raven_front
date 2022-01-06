@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveVideo from "../responsiveVideo/ResponsiveVideo";
 import { data } from "./data";
 import "./Main.scss";
 class Main extends Component<{}, { currentImage: number; images: string[] }> {
@@ -33,9 +34,15 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
   render() {
     const { images, currentImage } = this.state;
     return (
-      <div className="homeContainer">
+      <>
         <div className="card bg-dark text-white">
-          <img src={images[currentImage]} alt="images" className="card-img" />
+          <img
+            src={images[currentImage]}
+            alt="images"
+            className="imageBack card-img"
+            width="100%"
+            height="100%"
+          />
         </div>
 
         <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -77,7 +84,8 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
                     resources that your people need, so that they can work in
                     harmony. But, to be truly effective, it needs to be a
                     continual process, embedded into your team and
-                    organization's culture.
+                    organization's culture. We love to work together as one
+                    forever.
                   </p>
                 </div>
               </div>
@@ -113,7 +121,7 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
             <Link to="/" className="removeDefault">
               <div className="card">
                 <img
-                  src={images[9]}
+                  src={images[7]}
                   alt="cleaning images"
                   width="100%"
                   height="100%"
@@ -128,33 +136,15 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
                     for their plot motivation or resolution. Despite this, sport
                     is ultimately rarely the central concern of such films and
                     sport performs primarily an allegorical role. Furthermore,
-                    sports fans are not necessarily the target demographic in
-                    such movies, but sports fans tend to have a large following
-                    or respect for such movies.
+                    sports fans are not necessarily the target demographic.
                   </p>
                 </div>
               </div>
             </Link>
           </div>
         </div>
-
-        <div className="home home--3">
-          <img
-            src={images[3]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
-        </div>
-        <div className="home home--4">
-          <img
-            src={images[2]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
-        </div>
-      </div>
+        <ResponsiveVideo />
+      </>
     );
   }
 }
