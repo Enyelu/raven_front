@@ -10,7 +10,7 @@ function Card(props) {
           src={props.employeeImage}
           alt="http://placehold.it/32x32"
         />
-        <h3 className="employee-name">'{props.employeeName}'</h3>
+        <h3 className="employee-name">{props.employeeName}</h3>
 
         <div className="position-div">
           <p className="position">Position</p>
