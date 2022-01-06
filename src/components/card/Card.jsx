@@ -3,7 +3,7 @@ import "./Card.scss"
 
 function Card(props) {
     return (
-        <div className='card'>
+        <div className='card-main'>
            <div className='card-body'>
                 <img className='employee-image' src= {props.employeeImage} alt='http://placehold.it/32x32'/>
                 <h3 className='employee-name'>'{props.employeeName}'</h3>
