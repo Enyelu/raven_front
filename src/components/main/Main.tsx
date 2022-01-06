@@ -1,14 +1,12 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
+import ResponsiveVideo from "../responsiveVideo/ResponsiveVideo";
+import { data } from "./data";
 import "./Main.scss";
 class Main extends Component<{}, { currentImage: number; images: string[] }> {
   state = {
-    images: [
-      "https://images.unsplash.com/photo-1640457298166-fe3eddec2d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
-      "https://images.unsplash.com/photo-1599922036790-33c4013971c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1639661920872-adf8426d939b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      "https://images.unsplash.com/photo-1617079114138-9cf245e006c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-    ],
+    images: data,
     currentImage: 0
   };
   timerID!: NodeJS.Timer;
@@ -37,40 +35,118 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
   render() {
     const { images, currentImage } = this.state;
     return (
-      <div className="homeContainer">
-        <div className="home home--1">
+      <>
+        <div className="card bg-dark text-white">
           <img
             src={images[currentImage]}
-            alt="cleaning images"
+            alt="images"
+            className="imageBack card-img"
             width="100%"
             height="100%"
           />
         </div>
-        <div className="home home--2">
-          <img
-            src={images[0]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
+
+        <div className="row row-cols-1 row-cols-md-2 g-4">
+          <div className="col">
+            <Link to="/" className="removeDefault">
+              <div className="card">
+                <img
+                  src={images[5]}
+                  alt="cleaning images"
+                  width="100%"
+                  height="100%"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">We Love people that code</h5>
+                  <p className="card-text">
+                    Computer coding is the use of computer programming languages
+                    to give computers and machines a set of instructions on what
+                    actions to perform. It’s how humans communicate with
+                    machines. It’s what allows us to create computer software
+                    like programs, operating systems, and mobile apps.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="col">
+            <Link to="/" className="removeDefault">
+              <div className="card">
+                <img
+                  src={images[6]}
+                  alt="cleaning images"
+                  width="100%"
+                  height="100%"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Team Raven on the move</h5>
+                  <p className="card-text">
+                    Team building is about providing the skills, training and
+                    resources that your people need, so that they can work in
+                    harmony. But, to be truly effective, it needs to be a
+                    continual process, embedded into your team and
+                    organization's culture. We love to work together as one
+                    forever.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="col">
+            <Link to="/" className="removeDefault">
+              <div className="card">
+                <img
+                  src={images[8]}
+                  alt="cleaning images"
+                  width="100%"
+                  height="100%"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Pets</h5>
+                  <p className="card-text">
+                    While a pet is generally kept for the pleasure that it can
+                    give to its owner, often, especially with horses, dogs, and
+                    cats, as well as with some other animals, this pleasure
+                    appears to be mutual. Thus, pet keeping can be described as
+                    a symbiotic relationship, one that benefits both animals and
+                    human beings. As the keeping of pets has been practiced from
+                    prehistoric times to the present and as pets are found in
+                    nearly every culture and society, pet keeping apparently
+                    satisfies a deep, universal human need.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="col">
+            <Link to="/" className="removeDefault">
+              <div className="card">
+                <img
+                  src={images[7]}
+                  alt="cleaning images"
+                  width="100%"
+                  height="100%"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Sports</h5>
+                  <p className="card-text">
+                    A sports film is a film genre that uses sport as the theme
+                    of the film. It is a production in which a sport, sporting
+                    event, athlete, or follower of sport are prominently
+                    featured, and which depend on sport to a significant degree
+                    for their plot motivation or resolution. Despite this, sport
+                    is ultimately rarely the central concern of such films and
+                    sport performs primarily an allegorical role. Furthermore,
+                    sports fans are not necessarily the target demographic.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
-        <div className="home home--3">
-          <img
-            src={images[3]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
-        </div>
-        <div className="home home--4">
-          <img
-            src={images[2]}
-            alt="cleaning images"
-            width="100%"
-            height="100%"
-          />
-        </div>
-      </div>
+        <ResponsiveVideo />
+        <Footer />
+      </>
     );
   }
 }
