@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
 .card {
   overflow: hidden;
   box-shadow: 0 2px 20px;
@@ -50,6 +51,67 @@
   background-color: green;
   border-radius: 100px;
   padding: 2px;
+=======
+.card-main{
+    overflow: hidden;
+    box-shadow: 0 2px 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    height: 100%;
+    width: 250px;
+    padding: 20px;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+
+    @media (max-width: 1116px) {
+        height: 80%;
+
+    }
+    @media (max-width: 767px) {
+        height: 50%;
+    }
+    @media (max-width: 560px) {
+        height: 30%;
+    }
+    @media (max-width: 556px) {
+        height: 40%;
+    }
+
+    &:hover{
+        transform:scale(1.02);
+        .card-button{
+            background-color: whitesmoke;
+            transform:scale(1.02);
+            color: green;
+            border-color: green
+        }
+    }
+}
+
+.employee-image{
+    height: 40%;
+    width:100%;
+    object-fit: cover;
+    background-color: green;
+    border-radius: 100px;
+    padding: 2px;
+}
+
+.employee-name{
+    padding: .5rem;
+    margin:10px;
+    font-style: normal;
+    font-family: Georgia;
+    font-size: 17px;
+    width: 100%;
+    height: 5%;
+    font-style: oblique;
+    background-color: red;
+>>>>>>> 9bffcdaae7e0c3e8f05359f59b6b2ce12c78f54d
 }
 
 .employee-name {
@@ -62,6 +124,7 @@
   font-style: oblique;
 }
 
+<<<<<<< HEAD
 .card-button {
   padding: 1rem;
   font-style: normal;
@@ -77,6 +140,13 @@
   height: 50px;
   width: 100%;
   margin: 0.5px;
+=======
+.position-div{
+    display: grid;
+    margin: 15px;
+    justify-content: center;
+    font-style: oblique;
+>>>>>>> 9bffcdaae7e0c3e8f05359f59b6b2ce12c78f54d
 }
 
 .position-div {
@@ -86,6 +156,7 @@
   font-style: oblique;
 }
 
+<<<<<<< HEAD
 .work-duration-div {
   display: grid;
   justify-content: center;
@@ -114,3 +185,30 @@
   width: 100%;
   height: 20%;
 }
+=======
+.position{
+   font-size: 15px;
+   font-weight: bold;
+   margin: 10px;
+   background-color: brown;
+}
+
+.work-duration{
+    font-size: 15px;
+    font-weight: bold;
+    background-color: brown;
+}
+
+.position-value{
+    font-size: 12px;
+    width: 100%;
+    height: 10%;
+    background-color: chartreuse;
+}
+
+.work-duration-value{
+    font-size: 12px;
+    width: 100%;
+    height: 10%;
+}
+>>>>>>> 9bffcdaae7e0c3e8f05359f59b6b2ce12c78f54d
