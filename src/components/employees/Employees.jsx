@@ -49,10 +49,7 @@ const Employees = () => {
           <button className="add-employee-button" onClick={handleSubmit}>+ Add Employee</button>
         </div>
       </div >
-      <div className="employee-card-div">
-          {employeesObject.map(employee => <Card employeeImage={employee.avatar} employeeName={employee.firstName} position={employee.designation} duration='10 years'/>)}
-      </div>
-      
+      {employeesObject.map(employee => <Card employeeImage={employee.avatar} employeeName={employee.firstName} position={employee.designation} duration='10 years'/>)}
     </div>
   );
 };
