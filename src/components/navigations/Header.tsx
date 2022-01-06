@@ -10,7 +10,7 @@ const Header = () => {
   const show = showCollapsedMenu ? "show" : "";
   return (
     <header>
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark headerClass">
+      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-danger bg-gradient headerClass">
         <NavLink className="navbar-brand" to="/">
           <img
             src={Logo}
