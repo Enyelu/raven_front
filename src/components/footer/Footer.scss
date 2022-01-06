@@ -1,0 +1,29 @@
+.footer-footer {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 80px;
+  margin-bottom: 40px;
+}
+.footer-grid-item1 {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.footer-grid-item2 {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  background-color: #fff;
+}
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+}

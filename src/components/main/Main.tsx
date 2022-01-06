@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 import ResponsiveVideo from "../responsiveVideo/ResponsiveVideo";
 import { data } from "./data";
 import "./Main.scss";
@@ -144,6 +145,7 @@ class Main extends Component<{}, { currentImage: number; images: string[] }> {
           </div>
         </div>
         <ResponsiveVideo />
+        <Footer />
       </>
     );
   }

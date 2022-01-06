@@ -3,7 +3,7 @@ import "./Responsive-player.scss";
 const ResponsivePlayer = () => {
   return (
     <div className="card-group card-group-reduce">
-      <div className="card card-reduce">
+      <div className="card first-video-card">
         <div className="player-wrapper">
           <ReactPlayer
             className="react-player"
@@ -23,7 +23,7 @@ const ResponsivePlayer = () => {
           </p>
         </div>
       </div>
-      <div className="card card-reduce">
+      <div className="card second-video-card">
         <div className="player-wrapper">
           <ReactPlayer
             className="react-player"
