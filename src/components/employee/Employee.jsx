@@ -17,6 +17,7 @@ const Employee = () => {
           path="/employee/profile"
           render={(props) => <Profile {...props} hrData={employeeData} />}
         />
+        cd
         <Route path="/employee/hiring-manager" component={ContactHr} />
         <Route path="/employee/line-manager" component={ContactLineManager} />
         <Route path="/employee/change-passward" component={ChangePassword} />

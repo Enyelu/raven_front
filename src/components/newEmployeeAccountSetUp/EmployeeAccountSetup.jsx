@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import "./EmployeeAccountSetup.scss";
 import accountSetupImage from "../images/accountSetupImage.png";
 import agent from "../api/Agent";
+import { useHistory } from 'react-router-dom';
 
 
 export default function EmployeeAccountSetup() {
   
+  let history = useHistory();
   const [formValues, setFormValues] = useState({
     FirstName: "",
     MiddleName: "",
@@ -48,22 +50,32 @@ export default function EmployeeAccountSetup() {
       alert('Department, designation and gender must be selected.')
     }
   }
+
+  const handleBackToDashBoard = async (e) =>{
+    e.preventDefault();
+  
+   history.push(`/hr`)
+} 
   
   const departments = ["Engineering", "Accounts"];
   const designations = [".NET", "Node.js", "Accountant"];
 
   return (
     <div className="main-div">
-      <div className="invite-image-div">
+
+      <div className="button-div">
+         <button className="dashboard-button" onClick={handleBackToDashBoard}>Back To Dashboard</button>
+      </div>
+      
+      <form className="invite-form" onSubmit={handleSubmit}>
+        <h3 className="invite-block-title">Setup New Employee's Account</h3>
+        <div className="invite-image-div">
         <img
           src={accountSetupImage}
           className="invite-image"
           alt="registration image"
         />
       </div>
-
-      <form className="invite-form" onSubmit={handleSubmit}>
-        <h3 className="invite-block-title">Setup New Employee's Account</h3>
 
         <div className="invite-input-div">
           <input
@@ -233,7 +245,7 @@ export default function EmployeeAccountSetup() {
             onChange={(e) =>
               setFormValues({ ...formValues, Salary: e.target.value })
             }
-            value={parseFloat(formValues.Salary)}
+            value={formValues.Salary}
           />
         </div>
         <div className="invite-input-div">

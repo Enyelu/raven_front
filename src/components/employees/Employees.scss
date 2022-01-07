@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.employees-main{
+    display:flex;
+    grid-template-columns: repeat(auto-fit, minmax(12rem,16rem));
+    gap:2rem;
+    justify-content: center;
+    height: 50%;
+}
+
+.top-div{
+    background-color: whitesmoke;
+    width: 100%;
+    margin-top: 5px;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px
+}
+
+.employee-title{
+    font-size: 30px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.add-employee-button{
+    height: 40px;
+    width: 200px;
+    background-color: green;
+    color: whitesmoke;
+    font-style: normal;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: whitesmoke;
+        transform:scale(1.05);
+        color: green;
+        border-color: green;
+    }
+}
+
+.employee-card-div{
+    display:flex;
+    grid-template-columns: repeat(auto-fit, minmax(12rem,16rem));
+    gap:2rem;
+    justify-content: center;
+    height: cover;
+}
