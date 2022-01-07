@@ -9,37 +9,40 @@ import agent from "../api/Agent"
 const Employees = () => {
 
   let history = useHistory();
-  const [employeesList, setEmployeesList] = useState();
-
-  useEffect(() => {
-
-    async function fetchData () {
-    
-      const employees = await agent.RavenAccess.getAllEmployees(1,200);
-      console.log(employees)
+  const [employeesList, setEmployeesList] = useState([]);
   
-      if(employees != null)
-      {
-        const eployeesStringified = JSON.stringify(employees.data.pageItems);
-        localStorage.setItem('EmployeesList', eployeesStringified)
-        setEmployeesList(employees.data.pageItems);
-      }
-    }
-    fetchData();
 
-  }, []);
-
-  const storedEmployeesList = localStorage.getItem('EmployeesList');
-  console.log(storedEmployeesList);
-  
-  const employeesObject = JSON.parse(storedEmployeesList);
-  console.log(employeesObject);
-
+ 
   const handleSubmit = async (e) =>{
     e.preventDefault();
   
    history.push(`/accountsetup`)
 } 
+
+
+// FETCH DATA FROM API 
+  useEffect(() => {
+    async function fetchData() {
+      const employees = await agent.RavenAccess.getAllEmployees(1, 200);
+      console.log('employeesdata: ', employees);
+  
+      if (employees.data) {
+        setEmployeesList(employees.data.pageItems);
+       
+      } else {
+        setEmployeesList([])
+      }
+    }
+    fetchData();
+  }, []);
+
+
+  // SAVE EMPLOYEES LIST TO LOCAL STORAGE 
+  useEffect(() => {
+    const eployeesStringified = JSON.stringify(employeesList);
+    localStorage.setItem("EmployeesList", eployeesStringified); 
+  }, [employeesList])
+
 
   return (
     <div className="employees-main">
@@ -49,7 +52,7 @@ const Employees = () => {
           <button className="add-employee-button" onClick={handleSubmit}>+ Add Employee</button>
         </div>
       </div >
-      {employeesObject.map(employee => <Card employeeImage={employee.avatar} employeeName={employee.firstName} position={employee.designation} duration='10 years'/>)}
+      {employeesList.map(employee => <Card key={employee.email} employeeImage={employee.avatar} employeeName={employee.firstName} position={employee.designation} duration='10 years'/>)}
     </div>
   );
 };
