@@ -7,11 +7,6 @@ import profile from "../images/a.png";
 import email from "../images/email.jpg";
 import pass from "../images/pass.png";
 import "./login.scss";
-// import React, {useState} from "react"
-// import { useHistory } from 'react-router-dom';
-// import agent from "../api/Agent";
-// import jwtDecode from "jwt-decode";
-//import jwtVerify from "jwt-verify";
 
 const Login = () => {
   let history = useHistory();
