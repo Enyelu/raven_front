@@ -29,7 +29,7 @@ export const sidebardata = [
   },
   {
     title: "employee",
-    path: "/hr/message-employee",
+    path: "/hr/employee",
     icon: <HiIcons.HiUser />,
     cName: "nav-text"
   }

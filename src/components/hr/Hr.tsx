@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 import ChangePassword from "../changePassword/ChangePassword";
 import Employees from "../employees/Employees";
+import GetEmployee from "../getEmployee/GetEmployee";
 import MessageEmployee from "../messageEmployee/MessageEmployee";
 import HrSideBar from "../sidebars/hrSideBar/HrSideBar";
 import MessageEmployees from "../messageEmployees/MessageEmployees";
@@ -23,10 +24,8 @@ const Hr = (): any => {
         <Route path="/hr/message-employees" component={MessageEmployees} />
 
         <Route path="/hr/change-password" component={ChangePassword} />
-        <Route
-          path="/connect/hr/message-employee"
-          component={MessageEmployee}
-        />
+
+        <Route path="/hr/employee" component={GetEmployee} />
       </Switch>
     </div>
   );
