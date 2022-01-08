@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.main-div-qualified{
+    background-color:white;
+    justify-content: center;
+    text-align:center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.invite-form-qualified{
+    background-color:whitesmoke;
+    width: 45%;
+    padding: 10px 0;
+    text-align: center !important;
+    float:none;
+    display: inline-block;
+    margin-bottom: 50px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+}
+    
+.invite-image-qualified{
+    margin-bottom: 10px;
+    width: 20%;
+    height: 20%;
+    align-self: center;
+    background-color: white;
+}
+
+.invite-image-div-qualified{
+    margin: 10px 5px 0 0;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+}
+.invite-block-title-qualified{
+    font-style: normal;
+    font-family: Georgia;
+    margin: 5px 2px;
+}
+
+.invite-input-qualified{
+    border-radius: 5px;
+    display: inline-block;
+    font-style: normal;
+    font-family: Georgia;
+    width: 50%;
+    height: 30px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.invite-button-qualified{
+    background-color: green;
+    color:white;
+    border-radius: 5px;
+    font-style: normal;
+    font-family: Georgia;
+    width: 50%;
+    height: 40px;
+    margin: 10px;
+}
+
+.invite-label-qualified{
+    font-style: normal;
+    font-family: Georgia;
+}
+
+.dashboard-button-qualified{
+    margin-top : 100px;
+    padding: 0.5rem;
+    font-style: normal;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid ghostwhite;
+    background: transparent;
+    color: white;
+    border-radius: 0.5rem;
+    transition: 200ms ease-in, color 200ms ease-in;
+    background-color: green;
+    height: 50px;
+
+    &:hover {
+       
+        background-color: white;
+        transform: scale(1.02);
+        color: green;
+        border-color: green;
+    }
+}
+
+.button-div-qualified{
+    width: 100%;
+    justify-content:start;
+    text-align: start;
+    padding: 5px;
+}
