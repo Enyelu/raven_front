@@ -1,9 +1,9 @@
-import { useHistory } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Card from "../card/Card";
-import "./Employees.scss";
-import accountSetupImage from "../images/profileImage.jpg";
-import agent from "../api/Agent";
+import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Card from "../card/Card"
+import "./Employees.scss"
+import agent from "../api/Agent"
+
 
 const Employees = () => {
   let history = useHistory();

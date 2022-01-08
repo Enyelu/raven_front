@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.scss";
+import accountSetupImage from "../images/profileImage.jpg";
 
 function Card(props) {
   return (
@@ -8,7 +9,7 @@ function Card(props) {
         <img
           className="employee-image"
           src={props.employeeImage}
-          alt="http://placehold.it/32x32"
+          alt={accountSetupImage}
         />
         <h3 className="employee-name">{props.employeeName}</h3>
 

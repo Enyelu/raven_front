@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import agent from "../api/Agent";
-import jwtDecode from "jwt-decode";
 import profile from "../images/a.png";
 import email from "../images/email.jpg";
 import pass from "../images/pass.png";
@@ -23,18 +22,19 @@ const Login = () => {
       loginCredentials.email,
       loginCredentials.password
     );
-
+    
     if (response !== null) {
-      const stingifiedResponse = JSON.stringify(response.data);
-      localStorage.setItem("LoginResponse", stingifiedResponse);
+      localStorage.setItem("LoginResponse", JSON.stringify(response.data));
       localStorage.setItem("token", response.data.token);
-      console.log(response.data);
 
-      const jwtDecoded = jwtDecode(response.data.token);
-      const stringJwtDecoded = JSON.stringify(jwtDecoded);
-      localStorage.setItem("claims", stringJwtDecoded);
-      console.log(jwtDecoded);
-      history.push("/hr");
+      if(response.data.roles[0] === "SuperAdmin" || response.data.roles[0] === "Admin")
+      {
+        history.push("/hr");
+      }
+      else
+      {
+        history.push("/employee/profile");
+      }
     }
   };
 
