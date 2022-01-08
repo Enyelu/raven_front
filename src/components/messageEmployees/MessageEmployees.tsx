@@ -9,7 +9,7 @@ const MessageEmployees = () => {
           placeholder="Write your message here"
           id="floatingTextarea"
         ></textarea>
-        <button>Send</button>
+        <button className="employees-button">Send</button>
       </form>
     </div>
   );
