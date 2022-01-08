@@ -16,9 +16,9 @@ const Hr = (): any => {
       <Switch>
         <Route
           path="/hr/profile"
+          exact
           render={(props) => <Profile {...props} hrData={hrData} />}
         />
-        {/* <Route path="/hr" exact component={Profile} /> */}
         <Route path="/hr/employees" component={Employees} />
         <Route path="/hr/message-employees" component={MessageEmployees} />
 
