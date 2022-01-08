@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Card from "../card/Card";
-import "./employees.scss";
+import "./Employees.scss";
 import accountSetupImage from "../images/profileImage.jpg";
 import agent from "../api/Agent";
 
