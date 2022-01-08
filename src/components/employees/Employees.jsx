@@ -6,52 +6,55 @@ import agent from "../api/Agent"
 
 
 const Employees = () => {
-
   let history = useHistory();
   const [employeesList, setEmployeesList] = useState([]);
-  
 
- 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-   history.push(`/accountsetup`)
-} 
 
+    history.push(`/accountsetup`);
+  };
 
-// FETCH DATA FROM API 
+  // FETCH DATA FROM API
   useEffect(() => {
     async function fetchData() {
       const employees = await agent.RavenAccess.getAllEmployees(1, 200);
-      console.log('employeesdata: ', employees);
-  
+      console.log("employeesdata: ", employees);
+
       if (employees.data) {
         setEmployeesList(employees.data.pageItems);
-       
       } else {
-        setEmployeesList([])
+        setEmployeesList([]);
       }
     }
     fetchData();
   }, []);
 
-
-  // SAVE EMPLOYEES LIST TO LOCAL STORAGE 
+  // SAVE EMPLOYEES LIST TO LOCAL STORAGE
   useEffect(() => {
     const eployeesStringified = JSON.stringify(employeesList);
-    localStorage.setItem("EmployeesList", eployeesStringified); 
-  }, [employeesList])
-
+    localStorage.setItem("EmployeesList", eployeesStringified);
+  }, [employeesList]);
 
   return (
     <div className="employees-main">
       <div className="top-div">
         <div className="employee-title">Employees</div>
-        <div >
-          <button className="add-employee-button" onClick={handleSubmit}>+ Add Employee</button>
+        <div>
+          <button className="add-employee-button" onClick={handleSubmit}>
+            + Add Employee
+          </button>
         </div>
-      </div >
-      {employeesList.map(employee => <Card key={employee.email} employeeImage={employee.avatar} employeeName={employee.firstName} position={employee.designation} duration='10 years'/>)}
+      </div>
+      {employeesList.map((employee) => (
+        <Card
+          key={employee.email}
+          employeeImage={employee.avatar}
+          employeeName={employee.firstName}
+          position={employee.designation}
+          duration="10 years"
+        />
+      ))}
     </div>
   );
 };

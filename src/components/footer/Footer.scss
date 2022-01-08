@@ -1,40 +1,15 @@
 .footer-footer {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  height: 80px;
-  margin-bottom: 40px;
-  border-radius: 3px;
-}
-.footer-grid-item1 {
-  grid-row: 1/2;
-  grid-column: 1/2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  font-weight: bold;
-  font-style: italic;
-  background: linear-gradient(
-    to right,
-    rgba(249, 105, 14, 1) 0%,
-    rgba(102, 51, 153, 1) 100%
-  );
-}
-.footer-grid-item2 {
-  grid-row: 1/2;
-  grid-column: 2/3;
-  background: linear-gradient(
-    to right,
-    rgba(249, 105, 14, 1) 0%,
-    rgba(102, 51, 153, 1) 100%
-  );
-}
-.footer-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  background-color: #fff;
+  background-color: rgba(249, 105, 14, 1);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+}
+.footer-item {
+  list-style: none;
 }
