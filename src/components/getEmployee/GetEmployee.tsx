@@ -1,5 +1,5 @@
 import "./GetEmployee.scss";
 const GetEmployee = () => {
-  return <div>GetEmplyee</div>;
+  return <div className="get-employee">GetEmplyee</div>;
 };
 export default GetEmployee;
