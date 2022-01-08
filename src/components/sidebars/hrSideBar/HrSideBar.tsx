@@ -15,7 +15,7 @@ const HrSideBar = () => {
         </li>
         <li className="nav-item">
           <button
-            className="nav-link active"
+            className="nav-link hr-li-button active"
             aria-current="page"
             onClick={() => {
               history.push("/logout");
