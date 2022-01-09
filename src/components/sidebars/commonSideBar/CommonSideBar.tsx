@@ -1,9 +1,21 @@
+import { LocationDescriptor, Location } from "history";
+import { ReactChild, ReactFragment, ReactPortal, Key } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import { sidebardata } from "./sidebardata";
+// import { sidebardata } from "./sidebardata";
 import TimeDate from "../../timeDate/TimeDate";
-import "./HrSideBar.scss";
+import "./CommonSideBar.scss";
 
-const HrSideBar = () => {
+type Item = {
+  cName: any;
+  path:
+    | LocationDescriptor<unknown>
+    | ((location: Location<unknown>) => LocationDescriptor<unknown>);
+  icon: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+  title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+};
+type Index = Key | null | undefined;
+
+const CommonSideBar = (props: any) => {
   const history = useHistory();
   return (
     <div style={{ height: "100%" }}>
@@ -27,7 +39,7 @@ const HrSideBar = () => {
       </div>
 
       <ul className="list-group list-group-margin" style={{ width: "120px" }}>
-        {sidebardata.map((item, index) => {
+        {props.sideData.map((item: Item, index: Index) => {
           return (
             <li
               key={index}
@@ -51,4 +63,4 @@ const HrSideBar = () => {
   );
 };
 
-export default HrSideBar;
+export default CommonSideBar;

@@ -2,7 +2,7 @@ import * as GoIcons from "react-icons/go";
 import * as IoIcons from "react-icons/io";
 import * as HiIcons from "react-icons/hi";
 
-export const sidebardata = [
+export const sideBarData = [
   {
     title: "profile",
     path: "/hr/profile",
