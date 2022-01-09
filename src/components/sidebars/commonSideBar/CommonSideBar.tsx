@@ -1,7 +1,6 @@
-import { LocationDescriptor, Location } from "history";
 import { ReactChild, ReactFragment, ReactPortal, Key } from "react";
+import { LocationDescriptor, Location } from "history";
 import { NavLink, useHistory } from "react-router-dom";
-// import { sidebardata } from "./sidebardata";
 import TimeDate from "../../timeDate/TimeDate";
 import "./CommonSideBar.scss";
 

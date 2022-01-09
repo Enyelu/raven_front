@@ -4,7 +4,6 @@ import Employees from "../employees/Employees";
 import GetEmployee from "../getEmployee/GetEmployee";
 import CommonSideBar from "../sidebars/commonSideBar/CommonSideBar";
 import { sideBarData } from "./sideBarData";
-//import HrSideBar from "../sidebars/hrSideBar/HrSideBar";
 import MessageEmployees from "../messageEmployees/MessageEmployees";
 import Profile from "../profile/Profile";
 import { data } from "./data";
