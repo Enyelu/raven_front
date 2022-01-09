@@ -1,26 +1,27 @@
 import { Switch, Route } from "react-router-dom";
 import ContactHr from "../contacthr/ContactHr";
+import CommonSideBar from "../sidebars/commonSideBar/CommonSideBar";
 import ChangePassword from "../changePassword/ChangePassword";
 import ContactLineManager from "../contactLineManage/ContactLineManager";
 import Profile from "../profile/Profile";
-import EmployeeSideBar from "../sidebars/employeeSideBar/EmployeeSideBar";
+import { sideBarData } from "./sideBarData";
 import { data } from "./data.js";
 
-const Employee = () => {
+const Employee = (): any => {
   const employeeData = data();
   return (
     <div>
-      <EmployeeSideBar />
+      <CommonSideBar sideData={sideBarData} />
       <Switch>
-        <Route path="/employee" exact component={Profile} />
         <Route
           path="/employee/profile"
+          exact
           render={(props) => <Profile {...props} hrData={employeeData} />}
         />
-        cd
         <Route path="/employee/hiring-manager" component={ContactHr} />
-        <Route path="/employee/line-manager" component={ContactLineManager} />
-        <Route path="/employee/change-passward" component={ChangePassword} />
+        <Route path="/hr/line-manager" component={ContactLineManager} />
+
+        <Route path="/employee/change-password" component={ChangePassword} />
       </Switch>
     </div>
   );
