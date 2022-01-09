@@ -1,17 +1,28 @@
-import { Link, useHistory } from "react-router-dom";
-import { sidebardata } from "./sidebardata";
+import { ReactChild, ReactFragment, ReactPortal, Key } from "react";
+import { LocationDescriptor, Location } from "history";
+import { NavLink, useHistory } from "react-router-dom";
 import TimeDate from "../../timeDate/TimeDate";
-import "./HrSideBar.scss";
+import "./CommonSideBar.scss";
 
-const HrSideBar = () => {
+type Item = {
+  cName: any;
+  path:
+    | LocationDescriptor<unknown>
+    | ((location: Location<unknown>) => LocationDescriptor<unknown>);
+  icon: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+  title: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined;
+};
+type Index = Key | null | undefined;
+
+const CommonSideBar = (props: any) => {
   const history = useHistory();
   return (
     <div style={{ height: "100%" }}>
       <div className="nav justify-content-end" style={{ marginTop: "80px" }}>
         <li className="nav-item">
-          <Link className="nav-link" to="">
+          <NavLink className="nav-link" to="">
             <TimeDate />
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
           <button
@@ -27,21 +38,22 @@ const HrSideBar = () => {
       </div>
 
       <ul className="list-group list-group-margin" style={{ width: "120px" }}>
-        {sidebardata.map((item, index) => {
+        {props.sideData.map((item: Item, index: Index) => {
           return (
             <li
               key={index}
-              className={`${item.cName} list-group-item`}
+              className={`${item.cName} list-group-list`}
               style={{ width: "130px" }}
             >
-              <Link
+              <NavLink
                 to={item.path}
-                className="nav-link active"
+                className="nav-link-item active"
                 aria-current="page"
+                activeClassName="activeItemClass"
               >
                 {item.icon}
                 <span>{item.title}</span>
-              </Link>
+              </NavLink>
             </li>
           );
         })}
@@ -50,4 +62,4 @@ const HrSideBar = () => {
   );
 };
 
-export default HrSideBar;
+export default CommonSideBar;

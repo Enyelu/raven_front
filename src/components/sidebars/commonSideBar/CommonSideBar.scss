@@ -1,0 +1,27 @@
+.list-group-list {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: rgb(84, 209, 22);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.nav-link-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: black;
+  text-transform: capitalize;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  background-color: #fff;
+}
+ul li .active:hover {
+  background-color: #998100;
+  color: #fff;
+}
+.activeItemClass {
+  background-color: #008000;
+}
