@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { sidebardata } from "./sidebardata";
 import TimeDate from "../../timeDate/TimeDate";
 import "./HrSideBar.scss";
@@ -9,9 +9,9 @@ const HrSideBar = () => {
     <div style={{ height: "100%" }}>
       <div className="nav justify-content-end" style={{ marginTop: "80px" }}>
         <li className="nav-item">
-          <Link className="nav-link" to="">
+          <NavLink className="nav-link" to="">
             <TimeDate />
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
           <button
@@ -31,17 +31,18 @@ const HrSideBar = () => {
           return (
             <li
               key={index}
-              className={`${item.cName} list-group-item`}
+              className={`${item.cName} list-group-list`}
               style={{ width: "130px" }}
             >
-              <Link
+              <NavLink
                 to={item.path}
-                className="nav-link active"
+                className="nav-link-item active"
                 aria-current="page"
+                activeClassName="activeItemClass"
               >
                 {item.icon}
                 <span>{item.title}</span>
-              </Link>
+              </NavLink>
             </li>
           );
         })}
