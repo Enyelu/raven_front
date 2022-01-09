@@ -6,8 +6,9 @@ import ContactLineManager from "../contactLineManage/ContactLineManager";
 import Profile from "../profile/Profile";
 import { sideBarData } from "./sideBarData";
 import { data } from "./data.js";
+import "./Employee.scss";
 
-const Employee = (): any => {
+const Employee = () => {
   const employeeData = data();
   return (
     <div>
@@ -19,7 +20,7 @@ const Employee = (): any => {
           render={(props) => <Profile {...props} hrData={employeeData} />}
         />
         <Route path="/employee/hiring-manager" component={ContactHr} />
-        <Route path="/hr/line-manager" component={ContactLineManager} />
+        <Route path="/employee/line-manager" component={ContactLineManager} />
 
         <Route path="/employee/change-password" component={ChangePassword} />
       </Switch>
