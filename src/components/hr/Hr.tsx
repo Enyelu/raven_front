@@ -22,9 +22,7 @@ const Hr = (): any => {
         />
         <Route path="/hr/employees" component={Employees} />
         <Route path="/hr/message-employees" component={MessageEmployees} />
-
         <Route path="/hr/change-password" component={ChangePassword} />
-
         <Route path="/hr/employee" component={GetEmployee} />
       </Switch>
     </div>
