@@ -2,35 +2,29 @@ import * as GoIcons from "react-icons/go";
 import * as IoIcons from "react-icons/io";
 import * as HiIcons from "react-icons/hi";
 
-export const sidebardata = [
+export const sideBarData = [
   {
     title: "profile",
-    path: "/hr/profile",
+    path: "/employee/Profile",
     icon: <HiIcons.HiUserCircle />,
     cName: "nav-text"
   },
   {
-    title: "employees",
-    path: "/hr/employees",
+    title: "contactHr",
+    path: "/employee/hiring-manager",
     icon: <IoIcons.IoIosPeople />,
     cName: "nav-text"
   },
   {
-    title: "message employees",
-    path: "/hr/message-employees",
+    title: "contact lineMG",
+    path: "/employee/line-manager",
     icon: <IoIcons.IoIosFolder />,
     cName: "nav-text"
   },
   {
     title: "change password",
-    path: "/hr/change-password",
+    path: "/employee/change-password",
     icon: <GoIcons.GoKebabHorizontal />,
-    cName: "nav-text"
-  },
-  {
-    title: "employee",
-    path: "/hr/message-employee",
-    icon: <HiIcons.HiUser />,
     cName: "nav-text"
   }
 ];

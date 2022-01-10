@@ -2,34 +2,32 @@ import { Switch, Route } from "react-router-dom";
 import ChangePassword from "../changePassword/ChangePassword";
 import Employees from "../employees/Employees";
 import MessageEmployees from "../messageEmployees/MessageEmployees";
-import MessageEmployee from "../messageEmployee/MessageEmployee";
-import LineManagerSideBar from "../sidebars/lineManagerSideBar/LineManagerSideBar";
+import GetEmployee from "../getEmployee/GetEmployee";
 import Profile from "../profile/Profile";
+import { sideBarData } from "../hr/sideBarData";
+import CommonSideBar from "../sidebars/commonSideBar/CommonSideBar";
 import { data } from "./data";
 
 const LineManager = () => {
-  const lineData = data();
+  const lineManagerData = data();
   return (
     <div>
-      <LineManagerSideBar />
+      <CommonSideBar sideData={sideBarData} />
       <Switch>
-        <Route path="/linemanager" exact component={Profile} />
-
-      <Route path="/linemanager/employees" component={Employees} />
         <Route
           path="/linemanager/profile"
-          render={(props) => <Profile {...props} hrData={lineData} />}
+          exact
+          render={(props) => <Profile {...props} hrData={lineManagerData} />}
         />
-
+        <Route path="/linemanager/employees" component={Employees} />
         <Route
           path="/linemanager/message-employees"
           component={MessageEmployees}
         />
-        <Route path="/linemanager/change-passward" component={ChangePassword} />
-        <Route
-          path="/linemanager/message-employee"
-          component={MessageEmployee}
-        />
+
+        <Route path="/linemanager/change-password" component={ChangePassword} />
+
+        <Route path="/linemanager/employee" component={GetEmployee} />
       </Switch>
     </div>
   );

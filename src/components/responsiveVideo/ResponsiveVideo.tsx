@@ -7,13 +7,13 @@ const ResponsivePlayer = () => {
         <div className="player-wrapper">
           <ReactPlayer
             className="react-player"
-            url="https://www.youtube.com/watch?v=z7mIkruXgJQ"
+            url="https://www.youtube.com/watch?v=Zwu2HjU7pXY"
             width="100%"
             height="100%"
             controls={true}
           />
         </div>
-        <div className="card-body ">
+        <div className="card-body">
           <h5 className="card-title">A Day in the life of Software Engineer</h5>
           <p className="card-text">
             Software engineers and developers work on computer applications and
