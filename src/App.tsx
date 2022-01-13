@@ -14,6 +14,7 @@ import Employee from "./components/employee/Employee";
 import LineManager from "./components/lineManager/LineManager";
 import "./App.scss";
 import Employees from "./components/employees/Employees"
+import image from "./components/imageTest/Imageers.jsx"
 import QualifiedApplicants from "./components/qualifiedApplicants/QualifiedApplicants"
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/contactUs" component={ContactUs} />
         <Route path="/employees" component={Employees} />
         <Route path="/qualifiedApplicants" component={QualifiedApplicants} />
+        <Route path="/image" component={image} />
         <Route component={NotFound} />
         <Redirect to="/about" />
         <Redirect to="/login" />
@@ -48,6 +50,7 @@ function App() {
         <Redirect to="/slackOnboard" />
         <Redirect to="/employees" />
         <Redirect to="/qualifiedApplicants" />
+        <Redirect to="/image" />
       </Switch>
     </div>
   );

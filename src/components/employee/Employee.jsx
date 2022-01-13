@@ -23,6 +23,8 @@ const Employee = () => {
         <Route path="/employee/line-manager" component={ContactLineManager} />
 
         <Route path="/employee/change-password" component={ChangePassword} />
+        <Route path="/employee/change-password" component={ChangePassword} />
+        <Route path="/employee/change-password" component={ChangePassword} />
       </Switch>
     </div>
   );

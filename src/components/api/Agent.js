@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-axios.defaults.baseURL = 'https://localhost:5001/api';
+axios.defaults.baseURL = 'http://136.244.68.223/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const sleep = () => {
@@ -51,6 +51,10 @@ getAllDesignationEmployees : (departmentName, pageSize, pageNumber) => request.g
 UpdateEmployee: (body) => request.put(`/Employee/Update`, body),
 ChangeEmployeeDesignation: (body) => request.patch(`/Employee/EmployeeDesignation`, body),
 ChangeEmployeeDepartment: (body) => request.patch(`/Employee/EmployeeDepartment`, body),
+
+//Upload
+UploadImage: (formData) => request.post(`/Employee/UploadImage`, formData),
+UploadeDocuments: (body) => request.post(`/Employee/UploadDocument`, body),
 //SendMail
 
 //SendBulkMail
@@ -69,7 +73,7 @@ AccountSetup: (body) => request.post(`/Auth/Registration`, body),
 Login: (email, password) => request.get(`/Auth/Login?Email=${email}&Password=${password}`),
 ForgotPassword: (email) => request.get(`/Auth/ForgotPassword/${email}`),
 ResetPassword: (body) => request.post(`/Auth/ResetPassword`, body), 
-UpdatePassword: (UserId, body) => request.patch(`/Auth/UpdatePassword/${UserId}`, body),
+UpdatePassword: (body) => request.patch(`/Auth/UpdatePassword`, body),
 //RefreshToken
 
     //Department axios-http methods
