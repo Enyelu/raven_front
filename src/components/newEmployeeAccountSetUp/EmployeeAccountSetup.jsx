@@ -28,7 +28,7 @@ export default function EmployeeAccountSetup() {
     e.preventDefault();
     console.log('hello');
     
-    if(formValues.Department !== '' && formValues.Designation !== '' && formValues.Gender !== '')
+    if(formValues.Department !== '' && formValues.Designation !== '' && formValues.Gender !== '' && formValues.Role !== '')
     {
       const response = await agent.RavenAccess.AccountSetup(formValues); 
     
@@ -120,19 +120,6 @@ export default function EmployeeAccountSetup() {
           <input
             className="invite-input"
             type="text"
-            placeholder="Role"
-            onChange={(e) =>
-              setFormValues({ ...formValues, Role: e.target.value })
-            }
-            value={formValues.Role}
-            required
-          />
-        </div>
-
-        <div className="invite-input-div">
-          <input
-            className="invite-input"
-            type="text"
             placeholder="Employee Email"
             onChange={(e) =>
               setFormValues({ ...formValues, Email: e.target.value })
@@ -167,6 +154,29 @@ export default function EmployeeAccountSetup() {
             required
           />
         </div>
+
+        <div className="invite-input-div">
+                <div>
+                <label className="invite-label">Role</label>
+                </div>
+                <select
+                  className="invite-input"
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, Role: e.target.value })
+                  }
+                  value={formValues.Role}
+                >
+                  <option key="Member" value="Member">
+                    Member
+                  </option>
+                  <option key="LineManager" value="LineManager">
+                    Line Manager
+                  </option>
+                  <option key="Admin" value="Admin">
+                    Admin
+                  </option>
+                </select>
+              </div>
 
         <div className="invite-input-div">
                 <div>

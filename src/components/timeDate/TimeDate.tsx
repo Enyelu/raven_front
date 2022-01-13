@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import "./TimeDate.scss"
+
 const TimeDate = () => {
   const [date, setDate] = useState(new Date());
   useEffect(() => {
@@ -11,13 +13,17 @@ const TimeDate = () => {
   let today = new Date();
 
   return (
-    <div>
+    <div className="time-date-div">
+      <div className="time-div" >{date.toLocaleTimeString()}</div>
+      <div className="year-div">
       {today.getFullYear() +
         "-" +
         (today.getMonth() + 1) +
         "-" +
         today.getDate()}
-      <div>{date.toLocaleTimeString()}</div>
+      </div>
+      
+      
     </div>
   );
 };

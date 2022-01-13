@@ -52,6 +52,7 @@ const Employees = () => {
           employeeImage={employee.avatar}
           employeeName={employee.firstName}
           position={employee.designation}
+          employeeEmail={employee.email}
           duration="10 years"
         />
       ))}

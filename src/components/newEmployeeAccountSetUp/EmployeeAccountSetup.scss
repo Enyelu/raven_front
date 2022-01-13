@@ -34,7 +34,6 @@
 }
 
 .invite-image-div{
-    margin: 30px 5px 0 0;
     align-self: center;
     justify-content: center;
     justify-items: center;
@@ -42,7 +41,7 @@
 .invite-block-title{
     font-style: normal;
     font-family: Georgia;
-    margin: 10px 2px;
+    margin: 5px  0 2px 2px;
 }
 
 .invite-input{
@@ -57,13 +56,14 @@
 }
 
 .invite-button{
-    background-color: green;
+    background-color: rgb(20, 20, 48);
     color:white;
     border-radius: 5px;
     font-style: normal;
     font-family: Georgia;
     width: 50%;
-    height: 50px;
+    height: 40px;
+    margin: 20px;
 }
 
 .start-date{
@@ -88,7 +88,7 @@
     color: white;
     border-radius: 0.5rem;
     transition: 200ms ease-in, color 200ms ease-in;
-    background-color: green;
+    background-color: rgb(20, 20, 48);
     height: 50px;
 
 
@@ -96,8 +96,8 @@
        
         background-color: white;
         transform: scale(1.02);
-        color: green;
-        border-color: green;
+        color: rgb(20, 20, 48);
+        border-color: rgb(20, 20, 48);
       }
 }
 
