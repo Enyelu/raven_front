@@ -18,15 +18,15 @@ const CommonSideBar = (props: any) => {
   const history = useHistory();
   return (
     <div style={{ height: "100%" }}>
-      <div className="nav justify-content-end" style={{ marginTop: "80px" }}>
-        <li className="nav-item">
+      <div className="top-bar">
+        <li >
           <NavLink className="nav-link" to="">
             <TimeDate />
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li >
           <button
-            className="nav-link hr-li-button active"
+            className="top-div-button"
             aria-current="page"
             onClick={() => {
               history.push("/logout");

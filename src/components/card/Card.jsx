@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Card.scss";
 import accountSetupImage from "../images/profileImage.jpg";
 
 function Card(props) {
+  const [employeeDetails, setEmployeeDetails] = useState([]);
+  const [employeesObject, setEmployeeObject] = useState([]);
+  
+
+
+  const handleViewProfile = () => {
+    setEmployeeObject(JSON.parse(localStorage.getItem('EmployeesList')));  
+  }
+   
+
   return (
     <div className="card-main">
       <div className="card-body">
@@ -14,14 +24,14 @@ function Card(props) {
         <h3 className="employee-name">{props.employeeName}</h3>
 
         <div className="position-div">
-          <p className="position">Position</p>
-          <p className="position-value">{props.position}</p>
+          <h4 className="position">Position</h4>
+          <h4 className="position-value">{props.position}</h4>
         </div>
         <div className="work-duration-div">
-          <p className="work-duration">Worked Here</p>
-          <p className="work-duration-value">{props.duration}</p>
+          <h4 className="work-duration">Worked Here</h4>
+          <h4 className="work-duration-value">{props.duration}</h4>
         </div>
-        <button className="card-button" type="submit">
+        <button className="card-button" type="submit" onClick={()=>handleViewProfile()}>
           View Profile
         </button>
       </div>
