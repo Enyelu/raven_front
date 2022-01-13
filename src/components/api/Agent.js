@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-axios.defaults.baseURL = 'https://localhost:5001/api';
+axios.defaults.baseURL = 'http://136.244.68.223/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const sleep = () => {
