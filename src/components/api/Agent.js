@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-axios.defaults.baseURL = 'http://136.244.68.223/api';
+axios.defaults.baseURL = 'https://localhost:5001/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const sleep = () => {
@@ -54,7 +54,7 @@ ChangeEmployeeDepartment: (body) => request.patch(`/Employee/EmployeeDepartment`
 
 //Upload
 UploadImage: (formData) => request.post(`/Employee/UploadImage`, formData),
-UploadeDocuments: (body) => request.post(`/Employee/UploadDocument`, body),
+UploadeDocuments: (formData) => request.post(`/Employee/UploadDocument`, formData),
 //SendMail
 
 //SendBulkMail

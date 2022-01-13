@@ -5,34 +5,37 @@ import "./Imageers.scss"
 
 function Imageers() {
 
-const [attachment, setAttachment] = useState();
-	
-const changeHandler = (event) => {
-    setAttachment(event.target.files[0]);
-	};
+    const [file, setFile] = useState();
 
-	const uploadImage = async() => {
-		const formData = new FormData();
+    const onFromSubmit = (e) =>{
+        e.preventDefault();
+        console.log("file",file);
+        const formData = new FormData();
+        formData.append("Item", file);
+ 
+        const response = agent.RavenAccess.UploadeDocuments(formData);
+        console.log("response:", response);
+    }
 
-		formData.append('File', attachment);
-
-		var response = await agent.RavenAccess.UploadImage(formData);
-    console.log("api_response", response);
-	};
-	
-
+    const onInputChange = (e) =>{
+        setFile(e.target.files[0]);
+        console.log("file",file);
+    }
 
     return (
+
         <div className="topp">
-            <h1>Upload Image</h1>
-            <input 
-            type="file"
-            name="file"
-            placeholder="Upload Image"
-            onChange={changeHandler}
-            />
-            <button onClick={uploadImage}>Submit</button>
+            <form onSubmit={onFromSubmit} >
+                <h1>Upload Image</h1>
+                <input 
+                type="file"
+                name="Item"
+                onChange={onInputChange}
+                multiple/>
+                <button type="submit">Submit</button>
+            </form>
         </div>
+        
     )
 }
 
