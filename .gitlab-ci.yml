@@ -4,9 +4,21 @@ stages:
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy
   script:
+    #- sudo npm cache clean -f
+    #- sudo npm install -g n
+    #- sudo n stable
+    #- npm install
+    - curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    - sudo apt-get install -y nodejs
     - npm install
+    - npm --version
+    - node -v
+    - sudo npm install pm2 -g
     - npm run build
     - ls -ltr
+    - pwd
     - cd build
+    - ls
     - pm2 serve build 3000 --spa 
+    - pm2 list
   only: ['main']
