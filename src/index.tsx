@@ -5,13 +5,15 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import { GlobalProvider } from "./components/AppContext/Provider";
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
+  <GlobalProvider>
+    <Router>
       <App />
-    </React.StrictMode>
-  </Router>,
+    </Router>
+  </GlobalProvider>,
+
   document.getElementById("root")
 );
 
