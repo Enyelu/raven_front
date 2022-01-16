@@ -74,14 +74,14 @@ const responseBody = <T>(response: AxiosResponse<T>) => response.data;
  })
 
 const request = {
-  get: (url:string) => axios.get(url).then((response) => response.data),
+  get: (url:string) => axios.get(url).then(responseBody),
   post: (url:string, body:any) =>
-    axios.post(url, body).then((response) => response.data),
+    axios.post(url, body).then(responseBody),
   patch: (url:string, body:any) =>
-    axios.patch(url, body).then((response) => response.data),
+    axios.patch(url, body).then(responseBody),
   put: (url:string, body:any) =>
-    axios.put(url, body).then((response) => response.data),
-  delete: (url:string) => axios.delete(url).then((response) => response.data),
+    axios.put(url, body).then(responseBody),
+  delete: (url:string) => axios.delete(url).then(responseBody),
 };
 
 const RavenAccess = {
