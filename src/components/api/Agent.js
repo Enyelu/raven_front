@@ -41,105 +41,105 @@ axios.interceptors.response.use(
 );
 
 const request = {
-  get: (url: string) => axios.get(url).then((response) => response.data),
-  post: (url: string, body: any) =>
+  get: (url) => axios.get(url).then((response) => response.data),
+  post: (url, body) =>
     axios.post(url, body).then((response) => response.data),
-  patch: (url: string, body: any) =>
+  patch: (url, body) =>
     axios.patch(url, body).then((response) => response.data),
-  put: (url: string, body: any) =>
+  put: (url, body) =>
     axios.put(url, body).then((response) => response.data),
-  delete: (url: string) => axios.delete(url).then((response) => response.data),
+  delete: (url) => axios.delete(url).then((response) => response.data),
 };
 
 const RavenAccess = {
   //AppUser axios-http methods
-  getEmployee: (employeeEmail: any) =>
+  getEmployee: (employeeEmail) =>
     request.get(`/Employee/employeeEmail?employeeEmail=${employeeEmail}`),
-  getAllEmployees: (pageNumber: any, pageSize: any) =>
+  getAllEmployees: (pageNumber, pageSize) =>
     request.get(
       `/Employee/AllEmployees?PageSize=${pageSize}&PageNumber=${pageNumber}`
     ),
   getAllDepartmentEmployees: (
-    departmentName: any,
-    pageSize: any,
-    pageNumber: any
+    departmentName,
+    pageSize,
+    pageNumber
   ) =>
     request.get(
       `/Employee/AllDepartmentEmployees?DepartmentName=${departmentName}&PageSize=${pageSize}&PageNumber=${pageNumber}`
     ),
   getAllDesignationEmployees: (
-    departmentName: any,
-    pageSize: any,
-    pageNumber: any
+    departmentName,
+    pageSize,
+    pageNumber
   ) =>
     request.get(
       `/Employee/AllDesignationEmployees?DesignationName=${departmentName}/PageSize=${pageSize}/PageNumber=${pageNumber}`
     ),
 
-  UpdateEmployee: (body: any) => request.put(`/Employee/Update`, body),
-  ChangeEmployeeDesignation: (body: any) =>
+  UpdateEmployee: (body) => request.put(`/Employee/Update`, body),
+  ChangeEmployeeDesignation: (body) =>
     request.patch(`/Employee/EmployeeDesignation`, body),
   ChangeEmployeeDepartment: (body: any) =>
     request.patch(`/Employee/EmployeeDepartment`, body),
 
   //Upload
-  UploadImage: (formData: any) =>
+  UploadImage: (formData) =>
     request.post(`/Employee/UploadImage`, formData),
-  UploadeDocuments: (formData: any) =>
+  UploadeDocuments: (formData) =>
     request.post(`/Employee/UploadDocument`, formData),
   //SendMail
 
   //SendBulkMail
-  DeactivateEmployee: (body: any) =>
+  DeactivateEmployee: (body) =>
     request.patch(`/Employee/Deactivate`, body),
-  AssignRole: (body: any) => request.patch(`/Employee/AssignRole`, body),
-  EmployeesInRole: (roleName: any, pageSize: any, pageNumber: any) =>
+  AssignRole: (body) => request.patch(`/Employee/AssignRole`, body),
+  EmployeesInRole: (roleName, pageSize, pageNumber) =>
     request.get(
       `/Employee/InARole?roleName=${roleName}&PageSize=${pageSize}&PageNumber=${pageNumber}`
     ),
-  FormerEmployees: (pageSize: any, pageNumber: any) =>
+  FormerEmployees: (pageSize, pageNumber) =>
     request.get(
       `/Employee/FormerEmployees?PageSize=${pageSize}&PageNumber=${pageNumber}`
     ),
 
-  EmailConfirmationToken: (email: any) =>
+  EmailConfirmationToken: (email) =>
     request.get(`/Employee/EmailConfirmationToken?Email=${email}`),
-  SlackOnboard: (firstName: any, lastName: any, email: any) =>
+  SlackOnboard: (firstName, lastName, email) =>
     request.get(
       `/Employee/SlackOnboard?FirstName=${firstName}&LastName=${lastName}&Email=${email}`
     ),
-  CompleteAccountSetup: (body: any) =>
+  CompleteAccountSetup: (body) =>
     request.patch(`/Auth/RegistrationCompletion`, body),
 
   //Auth axios-http methods
-  AccountSetup: (body: any) => request.post(`/Auth/Registration`, body),
-  Login: (email: any, password: any) =>
+  AccountSetup: (body) => request.post(`/Auth/Registration`, body),
+  Login: (email, password) =>
     request.get(`/Auth/Login?Email=${email}&Password=${password}`),
-  ForgotPassword: (email: any) => request.get(`/Auth/ForgotPassword/${email}`),
-  ResetPassword: (body: any) => request.post(`/Auth/ResetPassword`, body),
-  UpdatePassword: (body: any) => request.patch(`/Auth/UpdatePassword`, body),
+  ForgotPassword: (email) => request.get(`/Auth/ForgotPassword/${email}`),
+  ResetPassword: (body) => request.post(`/Auth/ResetPassword`, body),
+  UpdatePassword: (body) => request.patch(`/Auth/UpdatePassword`, body),
   //RefreshToken
 
   //Department axios-http methods
-  CreateDepartment: (body: any) =>
+  CreateDepartment: (body) =>
     request.post(`/Department/NewDepartment`, body),
-  GetDepartment: (depertmentName: any) =>
+  GetDepartment: (depertmentName) =>
     request.get(`Department/ByName/${depertmentName}`),
 
   //Designation axios-http methods
-  CreateDesignation: (body: any) =>
+  CreateDesignation: (body) =>
     request.post(`Designation/NewDesignation`, body),
-  GetDesignation: (designationName: any) =>
+  GetDesignation: (designationName) =>
     request.get(`Designation/ByName/${designationName}`),
 
   //Roles axios-http methods
   //CreateRole: (roleName:any) => request.post(`/Role/CreateRole/${roleName}`),
   GetAllRoles: () => request.get(`/Role/AllRoles`),
-  DeleteRole: (roleName: any) => request.delete(`/Role/${roleName}`),
+  DeleteRole: (roleName) => request.delete(`/Role/${roleName}`),
 
   //Probational AppUser
-  AddProbationalUser: (body: any) => request.post(`/ProbationalAppUser`, body),
-  GetAllProbationalAppUsers: (pageSize: any, pageNumber: any) =>
+  AddProbationalUser: (body) => request.post(`/ProbationalAppUser`, body),
+  GetAllProbationalAppUsers: (pageSize, pageNumber) =>
     request.get(
       `/ProbationalAppUser/ConfirmAcceptance?PageSize=${pageSize}&PageNumber=${pageNumber}`
     ),
