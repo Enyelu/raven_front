@@ -1,9 +1,10 @@
+import React from "react"
 import { useState} from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import agent from "../api/Agent";
 import loginImage from "../shared/Images/LoginImages/a.png";
 import pass from "../shared/Images/LoginImages/pass.png";
-import "./login.scss";
+import "./login.css";
 // import { GlobalVariables } from "../AppContext/Provider";
 
 const Login = () => {
@@ -67,7 +68,7 @@ const Login = () => {
                 <input
                   type="text"
                   placeholder="email"
-                  className="name"
+                  className="login-input"
                   required
                   onChange={(e) =>
                     setLoginCredentials({
@@ -83,7 +84,7 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="name"
+                  className="login-input"
                   required
                   onChange={(e) =>
                     setLoginCredentials({
