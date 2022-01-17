@@ -1,7 +1,6 @@
 import "./sidebar.css";
 import {
   Person,
-  Timeline,
   Group,
   Assignment,
   Settings,
