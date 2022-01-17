@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar">
+    <div  className="sidebar">
       <div className="sidebarWrapper">
 
       <Link to="/profile" className="link">
@@ -28,7 +28,7 @@ export default function Sidebar() {
         </div>
         </Link>
 
-        <Link to="/employees" className="link">
+        <Link to="/employees"  className="link">
         <div className="sidebarMenu">
           <ul className="sidebarList">
               <li className="sidebarListItem">
